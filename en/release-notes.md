@@ -28,45 +28,45 @@
 * [Console] Translation enabled into multiple languages 
 
 
-### 2019.02.26
+### February 26, 2019
 
-#### 기능 개선
-* [Console] 공통 리소스 상품별 관리 대응
-
-
-### 2019.01.29
-
-#### 버그 수정
-* [Console] CAB API 호출 파라메터 변경
+#### Feature Updates
+* [Console] Took management actions for common resources per product
 
 
-### 2018.12.27
+### January 29, 2019
 
-#### 기능 개선/변경
-* [Console] 유저 콘솔 연동
-
-
-### 2018.11.27
-
-#### 기능 개선/변경
-* [API] 데이터 관리 정책 반영
+#### Bug Fixes
+* [Console] Changed the CAB API call parameter
 
 
-### 2018.10.23
+### December 27, 2018
 
-#### 버그 수정
-* [Console] 개인정보동의 간헐적 버그 수정
-
-
-### 2018.08.28
-
-#### 기능 개선/변경
-
-* [API] 백신 이벤트 탐지 현황 정보 이메일 수신 기능 추가
+#### Feature Updates
+* [Console] Linked with user console
 
 
-### 2018.06.26
+### November 27, 2018
 
-#### 신규 상품 출시
+#### Feature Updates
+* [API] Applied data management policy
 
-* Vaccine 서비스는 기술력을 인정받은 TrendMicro DeepSecurity 제품을 통해 악성코드로부터 이용자의 서버를 보호합니다.
+
+### October 23, 2018
+
+#### Bug Fixes
+* [Console] Fixed an issue of an occasional bug that appears while acquiring consent for personal information
+
+
+### August 28, 2018
+
+#### Feature Updates
+
+* [API] Added a feature that is used to receive the email containing the information related to the vaccine event detection status
+
+
+### June 26, 2018
+
+#### New product release
+
+* The Vaccine service protects user's server from malicious code using the technically proven TrendMicro DeepSecurity product.
