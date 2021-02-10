@@ -1,9 +1,10 @@
 ## Security > Vaccine > Release Notes
 
-### 2020. 08. 25.
+### August 25, 2020
 
-#### 기능 추가
-* [Console] Vaccine 서비스 리전 추가(한국 평촌 리전)
+#### More Features
+
+- [Console] Vaccine service region added (Pyeongchon region, Korea)
 
 
 ### Nov. 12, 2019
