@@ -6,7 +6,7 @@
 
 인스턴스의 이미지 OS에 따라 백신 설치 스크립트를 불러옵니다.
 
-![vaccine_01_ko_202008.png](https://static.toastoven.net/prod_vaccine/vaccine_01_ko_202008.png)
+![vaccine_01_ko_2106.png](https://static.toastoven.net/prod_vaccine/vaccine_01_ko_2106.png)
 
 ### Linux 계열 Agent
 
@@ -120,14 +120,14 @@ C:\Users\Administrator>
 ```
 ### 사용 시작
 
-![vaccine_02_ko_202008.png](https://static.toastoven.net/prod_vaccine/vaccine_02_ko_202008.png)
+![vaccine_02_ko_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_ko_20210628.png)
 
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
 **사용시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
 
 ## Vaccine Agent 비활성화 절차
 
-![vaccine_03_ko_202008.png](https://static.toastoven.net/prod_vaccine/vaccine_03_ko_202008.png)
+![vaccine_03_ko_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_ko_210628.png)
 
 1\. 웹 콘솔 사용 중지
 
