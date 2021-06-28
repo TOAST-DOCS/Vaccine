@@ -6,7 +6,7 @@
 
 インスタンスのイメージOSに応じて、ワクチンインストールスクリプトを読み込みます。
 
-![vaccine_01_jp_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_01_jp_20210628.png)
+![vaccine_01_jp_202106.png](https://static.toastoven.net/prod_vaccine/vaccine_01_jp_202106.png)
 
 ### Linux系列のAgent
 
