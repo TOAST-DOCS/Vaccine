@@ -6,7 +6,7 @@
 
 インスタンスのイメージOSに応じて、ワクチンインストールスクリプトを読み込みます。
 
-![vaccine_01_jp_202008.png](https://static.toastoven.net/prod_vaccine/vaccine_01_jp_202008.png)
+![vaccine_01_jp_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_jp_2021_06.png)
 
 ### Linux系列のAgent
 
@@ -120,14 +120,14 @@ C:\Users\Administrator>
 ```
 ### 使用開始
 
-![vaccine_02_jp_202008.png](https://static.toastoven.net/prod_vaccine/vaccine_02_jp_202008.png)
+![vaccine_02_jp_2010628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_jp_20210628.png)
 
 更新をクリックすると、状況リストにインストールされたAgent情報が表示されます。
 **使用開始**ボタンをクリックすると、サービスの使用を開始します。
 
 ## Vaccine Agentの無効化手順
 
-![vaccine_03_jp_202008.png](https://static.toastoven.net/prod_vaccine/vaccine_03_jp_202008.png)
+![vaccine_03_jp_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_jp_210628.png)
 
 1\. Webコンソール使用中止
 
