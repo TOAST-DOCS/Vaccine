@@ -6,7 +6,7 @@
 
 인스턴스의 이미지 OS에 따라 백신 설치 스크립트를 불러옵니다.
 
-![vaccine_01_ko_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_01_ko_210628.png)
+![vaccine_01_ko_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_01_ko_20210628.png)
 
 ### Linux 계열 Agent
 
