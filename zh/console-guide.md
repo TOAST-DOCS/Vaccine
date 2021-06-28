@@ -6,7 +6,7 @@ This document describes the procedure of enabling and disabling vaccine agents, 
 
 Import vaccine installation script, for each OS of an instance image. 
 
-![vaccine_01_en_202106.png](https://static.toastoven.net/prod_vaccine/vaccine_01_en_202106.png)
+![vaccine_01_en_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_en_2021_06.png)
 
 ### For Linux 
 
