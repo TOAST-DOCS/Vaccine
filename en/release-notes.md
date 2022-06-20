@@ -1,17 +1,18 @@
 ## Security > Vaccine > Release Notes
 
-### August 25, 2020
+
+
+### 2020. 08. 25.
 
 #### More Features
-
-- [Console] Vaccine service region added (Pyeongchon region, Korea)
-
+* [API] Vaccine manager upgraded
+* [Console] Service guide message deleted
 
 ### Nov. 12, 2019
 
-#### Feature Updates 
+#### Feature Updates
 * [API] Vaccine manager upgraded
-* [Console] Service guide message deleted  
+* [Console] Service guide message deleted
 
 
 ### August 27, 2019
