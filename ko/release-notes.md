@@ -1,5 +1,13 @@
 ## Security > Vaccine > 릴리스 노트
 
+### 2022. 06. 30.
+
+#### 기능 개선
+* [API] 백신 매니저 업그레이드
+* [Console] 서비스 안내 문구 삭제
+* [Console] Debian 11, Rocky Linux 이미지 지원
+
+
 ### 2020. 08. 25.
 
 #### 기능 추가
