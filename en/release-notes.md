@@ -12,7 +12,7 @@
 #### Added Features
 * [Console] Vaccine service region added (Korea - Pyeongchon region)
 
-### Nov 12, 2019
+### November 12, 2019
 
 #### Feature Updates 
 * [API] Vaccine manager upgraded
