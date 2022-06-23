@@ -156,8 +156,8 @@ C:\Users\Administrator>
 
 2\. 격리 파일 위치
 
-* Linux : /var/opt/ds_agent/guest/0000-0000-0000/quarantined
-* Windows : C:\ProgramData\Trend Micro\AMSP\quarantine
+* Linux: /var/opt/ds_agent/guest/0000-0000-0000/quarantined
+* Windows: C:\ProgramData\Trend Micro\AMSP\quarantine
     * 격리 파일이 보이지 않으면, **컴퓨터** 또는 **파일 탐색기** 메뉴에서 **폴더 및 검색 옵션**을 클릭한 후<br>
       **보기** 탭에서 **보호된 운영체제 파일 숨기기**를 선택 해제하고 **숨김 파일, 폴더 및 드라이브 표시**를 선택합니다.
 
@@ -194,7 +194,7 @@ Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 �
 
 ※ 주의 사항
 
-* 스크립트 내용 중 "group:앱키"의 앱키는 서비스 화면의 **URL & Appkey** 메뉴 내 Appkey값으로 변경해야 합니다.
+* 스크립트 내용 중 "group:앱키"의 앱키는 서비스 화면의 **URL & Appkey** 메뉴 내 Appkey 값으로 변경해야 합니다.
 * 사용을 원치 않는 복제 인스턴스는 불필요한 리소스가 낭비되지 않도록 설치된 Agent 삭제를 권장합니다.
 * '사용시작' 후 서비스 사용 상태는 즉시 '상품종료' 상태가 활성화되지만, 백신 동작은 최초 설치와 마찬가지로 최대 약 10분 뒤부터 정상 동작합니다.
 
