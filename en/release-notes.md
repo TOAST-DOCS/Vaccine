@@ -1,13 +1,18 @@
 ## Security > Vaccine > Release Notes
 
+### June 30, 2022
+
+#### Feature Updates
+* [API] Vaccine manager upgraded
+* [Console] Service guide message deleted
+* [Console] Debian 11, Rocky Linux image supported
+
 ### August 25, 2020
 
-#### More Features
+#### Added Features
+* [Console] Vaccine service region added (Korea - Pyeongchon region)
 
-- [Console] Vaccine service region added (Pyeongchon region, Korea)
-
-
-### Nov. 12, 2019
+### Nov 12, 2019
 
 #### Feature Updates 
 * [API] Vaccine manager upgraded
