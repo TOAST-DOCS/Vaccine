@@ -197,19 +197,26 @@ Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 �
 1\. Linux 계열 Agent 스크립트
 
 ```
-#!/bin/bash
+touch /etc/use_dsa_with_iptables
+
 IP=`ifconfig eth0 | grep -w -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1`
-HOSTNAME=`hostname`
+uuidInfo=`curl -s 169.254.169.254/openstack/latest/meta_data.json | python -c 'import json,sys;obj=json.load(sys.stdin);print (str(obj["uuid"])+":"+str("user_metadata.server_group" in obj["meta"]))'`
 /opt/ds_agent/dsa_control -r
-/opt/ds_agent/dsa_control -a dsm://106.249.21.88:4120/ "group:앱키" "displayname:$IP" "hostname:$HOSTNAME"
+/opt/ds_agent/dsa_control -a dsm://106.249.21.88:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
 
 2\. Windows 계열 Agent 스크립트
 
 ```
-@echo off
-FOR /F "tokens=1" %%a IN ('powershell -Command "((Get-WmiObject win32_networkadapterconfiguration | select ipaddress) | findstr .*[0-9].\.).Split(',')[0].Split('{')[-1]"') DO set IP=%%a
-"%PROGRAMFILES%\Trend Micro\Deep Security Agent\dsa_control" -r | "%PROGRAMFILES%\Trend Micro\Deep Security Agent\dsa_control" -a dsm://106.249.21.88:4120/ "group:앱키" "displayname:%IP%"
+$idx=(Get-WmiObject -Class Win32_IP4RouteTable | where { $_.destination -eq '0.0.0.0' -and $_.mask -eq '0.0.0.0'} | Sort-Object metric1).interfaceindex[0]
+
+$IP=((Get-WmiObject win32_networkadapterconfiguration | where { $_.interfaceindex -eq $idx} | select ipaddress)| findstr .*[0-9].\.).Split(",")[0].Split("{")[-1].Split("}")[0]
+$uuid=((invoke-webrequest -uri 169.254.169.254/openstack/latest/meta_data.json -UseBasicParsing).content | convertfrom-json).uuid
+$as="user_metadata.server_group" -in ((invoke-webrequest -uri 169.254.169.254/openstack/latest/meta_data.json -UseBasicParsing).content | convertfrom-json).meta.psobject.properties.name
+$uuidInfo=$uuid+":"+$as`
+
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -r
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://106.249.21.88:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
 ※ 배치 파일(.bat)로 생성하여 스크립트를 실행해야 합니다.
 
@@ -230,4 +237,3 @@ Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의�
 
 1\. 문의 방법: **고객 센터 > 1:1 문의**
 2\. 대응 시간: 평일 09:00~18:00
-
