@@ -175,10 +175,10 @@ AgentStatus.agentState: green
    * Linux
       * /opt/ds_agent/dsa_control -d 실행
       * /var/opt/ds_agent/diag/랜덤10자리숫자.zip 파일 분석 요청
-      * **커널 정보 확인 : sudo uname -a, OS 정보 확인 : sudo cat /etc/\*release** 결과 전달
+      * 커널 정보 확인 : sudo uname -a, OS 정보 확인 : sudo cat /etc/\*release 결과 전달
    * Windows
       * C:\Program Files\Trend Micro\Deep Security Agent\dsa_control -d 실행
-      * C:\Program Data\Trend Micro\Deep Security Agent\diag\랜덤10자리숫자.zip 파일 분석 요청 => **Progra Data 오타 수정 필요**
+      * C:\Program Data\Trend Micro\Deep Security Agent\diag\랜덤10자리숫자.zip 파일 분석 요청
    * 자세한 분석을 위해 문제 발생 상황에서 디버깅 수행 후 생성된 파일을 추가로 요청할 수 있습니다.
 
 ### 삭제 가이드
