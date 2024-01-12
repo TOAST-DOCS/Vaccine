@@ -192,32 +192,6 @@ AgentStatus.agentState: green
    * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
       * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
 
-
-
-### 임시 조치 가이드
-
-1\. 삭제
-
-#### Linux 계열 Agent
-* 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
-    * CentOS: rpm -e ds_agent 실행
-    * Debian/Ubuntu: apt-get remove ds-agent 실행
-
-#### Windows 계열 Agent
-* 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
-    * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
-
-2\. 분석 파일 전달
-
-* 재발 방지를 위한 원인 분석을 위해 다음 경로의 파일을 수집하여 고객 센터로 분석을 요청합니다.
-    * Linux
-        * /opt/ds_agent/dsa_control -d 실행
-        * /var/opt/ds_agent/diag/랜덤10자리숫자.zip 파일 분석 요청
-    * Windows
-        * C:\Program Files\Trend Micro\Deep Security Agent\dsa_control -d 실행
-        * C:\Program Files\Trend Micro\Deep Security Agent\diag\랜덤10자리숫자.zip 파일 분석 요청
-* 자세한 분석을 위해 문제 발생 상황에서 디버깅 수행 후 생성된 파일을 추가로 요청할 수 있습니다.
-
 ### 이미지 복제 시 사용 가이드
 
 Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 사용 가이드입니다.
