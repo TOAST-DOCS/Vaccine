@@ -157,6 +157,17 @@ C:\Users\Administrator>
     * 격리 파일이 보이지 않으면, **컴퓨터** 또는 **파일 탐색기** 메뉴에서 **폴더 및 검색 옵션**을 클릭한 후<br>
       **보기** 탭에서 **보호된 운영체제 파일 숨기기**를 선택 해제하고 **숨김 파일, 폴더 및 드라이브 표시**를 선택합니다.
 
+### 에이전트 상태 체크 가이드
+* Linux
+   * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
+```
+[root@vaccine-test ~]# cd /opt/ds_agent/
+[root@vaccine-test ds_agent]# ./dsa_query -c GetAgentStatus | grep AgentStatus.agentState
+AgentStatus.agentState: green
+[root@vaccine-test ds_agent]#
+```
+
+
 ### 임시 조치 가이드
 
 1\. 삭제
