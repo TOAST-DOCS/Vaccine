@@ -171,7 +171,26 @@ AgentStatus.agentState: green
    * ![windows_agent_status_1.png](https://static.toastoven.net/prod_vaccine/windows_agent_status_1.png)
      ![windows_agent_status_2.png](https://static.toastoven.net/prod_vaccine/windows_agent_status_2.png)
    
+### 분석 가이드
+* **에이전트 오프라인 또는 비활성 상태 시 분석을 위해 다음 파일을 수집하여 고객 센터로 분석을 요청합니다.**
+   * Linux
+      * /opt/ds_agent/dsa_control -d 실행
+      * /var/opt/ds_agent/diag/랜덤10자리숫자.zip 파일 분석 요청
+      * 커널 정보 확인 : **sudo uname -a**, OS 정보 확인 : **sudo cat /etc/\*release** 결과 전달
+   * Windows
+      * C:\Program Files\Trend Micro\Deep Security Agent\dsa_control -d 실행
+      * C:\Program Data\Trend Micro\Deep Security Agent\diag\랜덤10자리숫자.zip 파일 분석 요청 => **Progra Data 오타 수정 필요**
+   * 자세한 분석을 위해 문제 발생 상황에서 디버깅 수행 후 생성된 파일을 추가로 요청할 수 있습니다.
 
+
+### 삭제 가이드
+* Linux 계열 Agent
+   * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
+      * CentOS: rpm -e ds_agent 실행
+      * Debian/Ubuntu: apt-get remove ds-agent 실행
+* Windows 계열 Agent
+   * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
+      * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
 
 
 
