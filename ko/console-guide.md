@@ -168,7 +168,7 @@ AgentStatus.agentState: green
 ```
 * Windows
    * 윈도우 트레이에서 Agent 우클릭 후 콘솔 열기 선택 > "실행중(Running)" 확인
-   * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
+   ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
    
 ### 분석 가이드
 * **에이전트 오프라인 또는 비활성 상태 시 분석을 위해 다음 파일을 수집하여 고객 센터로 분석을 요청합니다.**
