@@ -160,12 +160,14 @@ C:\Users\Administrator>
 ### 에이전트 상태 체크 가이드
 * Linux
    * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
+     
 ```
 [root@vaccine-test ~]# cd /opt/ds_agent/
 [root@vaccine-test ds_agent]# ./dsa_query -c GetAgentStatus | grep AgentStatus.agentState
 AgentStatus.agentState: green
 [root@vaccine-test ds_agent]#
 ```
+   
 * Windows
    * 윈도우 트레이에서 Agent 우클릭 후 콘솔 열기 선택 > "실행중(Running)" 확인
    * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
