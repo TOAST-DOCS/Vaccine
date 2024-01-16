@@ -173,11 +173,11 @@ AgentStatus.agentState: green
     * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
    
 ### 분석 가이드
-* **에이전트 오프라인 또는 비활성 상태 시 분석을 위해 다음 파일을 수집하여 고객 센터로 분석을 요청합니다.**
+* **에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객 센터로 분석을 요청합니다.**
     * Linux
         * /opt/ds_agent/dsa_control -d 실행
         * /var/opt/ds_agent/diag/랜덤10자리숫자.zip 파일 분석 요청
-        * 커널 정보 확인 : sudo uname -a, OS 정보 확인 : sudo cat /etc/\*release 결과 전달
+        * 커널 정보 확인: sudo uname -a, OS 정보 확인 : sudo cat /etc/\*release 결과 전달
     * Windows
         * C:\Program Files\Trend Micro\Deep Security Agent\dsa_control -d 실행
         * C:\Program Data\Trend Micro\Deep Security Agent\diag\랜덤10자리숫자.zip 파일 분석 요청
