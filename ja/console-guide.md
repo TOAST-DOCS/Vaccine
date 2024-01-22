@@ -157,29 +157,40 @@ C:\Users\Administrator>
     *隔離ファイルが見えない場合は、**コンピュータ**または**ファイルエクスプローラ**のメニューで**フォルダーオプション**をクリックして<br>
     **表示**タブで**保護されたオペレーションシステムファイルを表示しない**の選択を解除して**隠しファイル、隠しフォルダー、および隠しドライブを表示する**を選択します。
 
-### 臨時措置ガイド
+### エージェント状態チェックガイド
+* Linux
+    * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
 
-1\. 削除
+```
+[root@vaccine-test ~]# cd /opt/ds_agent/
+[root@vaccine-test ds_agent]# ./dsa_query -c GetAgentStatus | grep AgentStatus.agentState
+AgentStatus.agentState: green
+[root@vaccine-test ds_agent]#
+```
 
-#### Linux系列のAgent
-* インスタンスに接続し、Vaccine Agentを削除します。
-    * CentOS： rpm -e ds_agent実行
-    * Debian/Ubuntu： apt-get remove ds-agent実行
+* Windows
+    * WindowsトレイでAgentを右クリックしてコンソールを開く > 「実行中(Running)」確認  
+    * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
 
-#### Windows系列のAgent
-* インスタンスに接続し、Vaccine Agentを削除します。
-    *プログラムおよび機能メニューで**Trend Micro Deep Security Agent**を削除します。
-
-2\. 分析ファイルの伝達
-
-* 再発防止のための原因分析のために、次のパスのファイルを収集してサポートに分析を要請します。
+### 分析ガイド
+* ***エージェントがオフラインまたは非アクティブ状態の場合、次のファイルを収集してサポートに分析をリクエストします。**
     * Linux
         * /opt/ds_agent/dsa_control -d実行
         * /var/opt/ds_agent/diag/ランダム10桁数字.zipファイル分析要請
+        * カーネル情報確認: sudo uname -a, OS情報確認: sudo cat /etc/\*release結果の伝達
     * Windows
         * C:\Program Files\Trend Micro\Deep Security Agent\dsa_control -d実行
-        * C:\Program Files\Trend Micro\Deep Security Agent\diag\ランダム10桁数字.zipファイル分析要請
-* 詳細な分析のために、問題発生状況でデバッグ実行後に作成されたファイルを追加で要請できます。
+        * C:\Program Data\Trend Micro\Deep Security Agent\diag\ランダム10桁数字.zipファイル分析リクエスト
+    * 詳細な分析のために、問題発生状況でデバッグ実行後に作成されたファイルを追加で要請できます。
+
+### 削除ガイド
+* Linux系列Agent
+    * インスタンスに接続してVaccine Agentを削除します。
+       * CentOS: rpm -e ds_agent実行
+       * Debian/Ubuntu: apt-get remove ds-agent実行
+* Windows系列Agent
+    * インスタンスに接続してVaccine Agentを削除します。
+       * プログラム及び機能メニューで**Trend Micro Deep Security Agent**を削除します。
 
 ### イメージ複製時の使用ガイド
 
