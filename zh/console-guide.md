@@ -2,6 +2,14 @@
 
 This document describes the procedure of enabling and disabling vaccine agents, and how to apply the service. 
 
+## Set Security Groups
+
+To communicated with the vaccine server, add the following content to the security groups.
+
+| Direction | Port | Region | CIDR |
+| --- | --- | --- | ---- |
+| Egress | 4119, 4120, 4122 | Korea (Pangyo), Korea (Pyeongchon) | 106.249.21.88/32 |
+
 ## Enabling Vaccine Agents 
 
 Import vaccine installation script, for each OS of an instance image. 
