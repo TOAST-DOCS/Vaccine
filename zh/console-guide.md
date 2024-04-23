@@ -2,6 +2,14 @@
 
 This document describes the procedure of enabling and disabling vaccine agents, and how to apply the service. 
 
+## Set Security Groups
+
+To communicated with the vaccine server, add the following content to the security groups.
+
+| Direction | Port | Region | CIDR |
+| --- | --- | --- | ---- |
+| Egress | 4119, 4120, 4122 | Korea (Pangyo), Korea (Pyeongchon) | 106.249.21.88/32 |
+
 ## Enabling Vaccine Agents 
 
 Import vaccine installation script, for each OS of an instance image. 
@@ -160,6 +168,10 @@ Click **Start Service** to start the service.
 * Linux
     * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
 
+### Guide for Agent Status Check
+* Linux
+    * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
+
 ```
 [root@vaccine-test ~]# cd /opt/ds_agent/
 [root@vaccine-test ds_agent]# ./dsa_query -c GetAgentStatus | grep AgentStatus.agentState
@@ -167,12 +179,18 @@ AgentStatus.agentState: green
 [root@vaccine-test ds_agent]#
 ```
 
-* Windows
-    * Right-click Agent in the window tray and select Open Console > Confirm "(Running)" 
-    * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
+#### For Linux 
+* Access instance and delete vaccine agent. 
+    * CentOS: Execute rpm -e ds_agent 
+    * Debian/Ubuntu: Execute apt-get remove ds-agent 
 
-### Analysis Guide
-* **Collect the following files to request analysis from Customer Center when the agent is offline or inactive**
+#### For Windows 
+* Access instance and delete vaccine agent. 
+    * On Programs and Features, delete **Trend Micro Deep Security Agent**.
+
+2\. Deliver Analysis Files 
+
+* To analyze causes to prevent recurrence, collect files of the following paths and request to Customer Center for analysis.  
     * Linux
         * Execute /opt/ds_agent/dsa_control -d 
         * Request for analysis of /var/opt/ds_agent/diag/random 10-digit numbers.zip file
@@ -181,15 +199,6 @@ AgentStatus.agentState: green
         * Execute C:\Program Files\Trend Micro\Deep Security Agent\dsa_control -d 
         * Request for analysis of C:\Program Data\Trend Micro\Deep Security Agent\diag\random 10-digit numbers. zip file 
 * To analyze in more details, when an issue occurs, you may perform debugging first and request for more created files.
-
-### Delete Guide
-* For Linux
-    * Access the instance to delete the Vaccine Agent.
-       * CentOS: Execute rpm -e ds_agent
-       * Debian/Ubuntu: Execute apt-get remove ds-agent
-* For Windows
-    * Access the instance to delete the Vaccine Agent.
-       * Delete **Trend Micro Deep Security Agent** from Programs and Features.
 
 ### User Guide for Image Replication 
 
