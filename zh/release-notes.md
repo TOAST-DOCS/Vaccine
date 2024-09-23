@@ -1,5 +1,10 @@
 ## Security > Vaccine > Release Notes
 
+### September 24, 2024
+
+#### Feature Updates
+* [API] Vaccine manager upgraded
+
 ### Nov. 12, 2019
 
 #### Feature Updates 
