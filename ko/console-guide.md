@@ -242,20 +242,6 @@ $uuidInfo=$uuid+":"+$as`
 ### Auto Scale 사용 가이드
 Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의하시면 자세히 설명드리겠습니다.
 
-### 사설 백신 사용 가이드
-
-사설 백신을 사용하기 위해서는 vaccine-private.gov-nhncloud.com 도메인과 통신이 가능하여야 합니다.
-도메인 통신이 불가한 환경인 경우, /etc/hosts 파일 변경 필요합니다.
-
-* Linux
-    * vi 편집기 등으로 /etc/hosts 파일에 아래 내용을 추가합니다.
-    * 10.162.255.105 vaccine-private.gov-nhncloud.com
-
-* Windows
-    * 메모장을 관리자 권한으로 실행 합니다.
-    * 실행 후 [파일 > 열기] 를 클릭합니다.
-    * C:\Windows\System32\drivers\etc 경로의 hosts 파일을 불러와 아래 내용을 추가합니다.
-    * 10.162.255.105 vaccine-private.gov-nhncloud.com
 
 ## 운영 문의
 
