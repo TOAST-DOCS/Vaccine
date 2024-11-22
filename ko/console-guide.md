@@ -249,7 +249,7 @@ Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의�
 
 * Linux
     * vi 편집기 등으로 /etc/hosts 파일에 아래 내용을 추가합니다.
-    * 10.162.255.105 vaccine-private.gov-nhncloud.com
+       * 10.162.255.105 vaccine-private.gov-nhncloud.com
 
 * Windows
     1. 메모장을 관리자 권한으로 실행합니다.
