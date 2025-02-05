@@ -1,5 +1,11 @@
 ## Security > Vaccine > Release Notes
 
+### February 11, 2025
+
+#### Feature Updates
+* [API] Vaccine manager upgraded
+* [Console] Ubuntu 24.04 image supported
+
 ### September 24, 2024
 
 #### Feature Updates
