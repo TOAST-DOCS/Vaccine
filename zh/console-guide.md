@@ -8,7 +8,7 @@ To communicated with the vaccine server, add the following content to the securi
 
 | Direction | Port | Region | CIDR |
 | --- | --- | --- | ---- |
-| Egress | 4119, 4120, 4122 | Korea (Pangyo), Korea (Pyeongchon) | 106.249.21.88/32 |
+| Egress | 4119, 4120, 4122 | Korea (Pangyo), Korea (Pyeongchon) | 114.110.144.39/32 |
 
 ## Enabling Vaccine Agents 
 
