@@ -229,7 +229,6 @@ Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 �
 
 * 공인망에서의 이미지 복제 시 아래 스크립트를 사용 합니다.
 
-
 1\. Linux 계열 Agent 스크립트
 
 ```
