@@ -164,7 +164,6 @@ Click **Start Service** to start the service.
 * Windows : C:\ProgramData\Trend Micro\AMSP\quarantine
     * If you cannot find isolated files, click **Folder and Search Option** in **Computer** or **File Search**,  <br>deselect **Hide Protected Operating System Files** from the **View** tab, and select **Show Hidden Files, Folders and Drives**. 
       
-
 ### Guide for Agent Status Check
 * Linux
     * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
