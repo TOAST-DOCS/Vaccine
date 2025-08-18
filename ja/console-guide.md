@@ -34,7 +34,7 @@
 [root@vaccine-test ~]# ./agent.sh
 /tmp/DownloadInstallAgentPackage: OK
 Downloading agent package ...
-curl https://106.249.21.88:4119/software/agent/RedHat_EL7/x86_64/ -o /tmp/agent.rpm --insecure --silent
+curl https://114.110.144.39:4119/software/agent/RedHat_EL7/x86_64/ -o /tmp/agent.rpm --insecure --silent
 Installing agent package ...
 Preparing...                          ################################# [100%]
 Updating / installing...
@@ -45,9 +45,9 @@ Activation will be re-attempted 30 time(s) in case of failure
 dsa_control
 HTTP Status: 200 - OK
 Response:
-Attempting to connect to https://106.249.21.88:4120/
+Attempting to connect to https://114.110.144.39:4120/
 SSL handshake completed successfully - initiating command session.
-Connected with (NONE) to peer at 106.249.21.88
+Connected with (NONE) to peer at 114.110.144.39
 Received a 'GetHostInfo' command from the manager.
 Received a 'GetHostInfo' command from the manager.
 Received a 'SetDSMCert' command from the manager.
@@ -92,7 +92,7 @@ d----      2018-06-05 午後2：37            installer
 記録が始まりました。出力ファイルはC:\Users\Administrator\AppData\Roaming\Trend Micro\Deep Security Agent\installer\dsa_deploy.logです。
 午後2：37：23 - DSA download started
 午後2：37：23 - Download Deep Security Agent Package
-https://106.249.21.88:4119/software/agent/Windows/x86_64/
+https://114.110.144.39:4119/software/agent/Windows/x86_64/
 午後2：37：24 - Downloaded File Size：
 13897728
 午後2：37：24 - DSA install started
@@ -104,9 +104,9 @@ Activation will be re-attempted 30 time(s) in case of failure
 dsa_control
 HTTP Status: 200 - OK
 Response:
-Attempting to connect to https://106.249.21.88:4120/
+Attempting to connect to https://114.110.144.39:4120/
 SSL handshake completed successfully - initiating command session.
-Connected with AES256-SHA256 to peer at 106.249.21.88
+Connected with AES256-SHA256 to peer at 114.110.144.39
 Received a 'GetHostInfo' command from the manager.
 Received a 'GetHostInfo' command from the manager.
 Received a 'SetDSMCert' command from the manager.
@@ -221,7 +221,7 @@ touch /etc/use_dsa_with_iptables
 IP=`ifconfig eth0 | grep -w -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1`
 uuidInfo=`curl -s 169.254.169.254/openstack/latest/meta_data.json | python -c 'import json,sys;obj=json.load(sys.stdin);print (str(obj["uuid"])+":"+str("user_metadata.server_group" in obj["meta"]))'`
 /opt/ds_agent/dsa_control -r
-/opt/ds_agent/dsa_control -a dsm://106.249.21.88:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+/opt/ds_agent/dsa_control -a dsm://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
 
 2\. Windows系列のAgentスクリプト
@@ -235,7 +235,7 @@ $as="user_metadata.server_group" -in ((invoke-webrequest -uri 169.254.169.254/op
 $uuidInfo=$uuid+":"+$as`
 
 & $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -r
-& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://106.249.21.88:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
 ※パッチファイル(.bat)で作成し、スクリプトを実行する必要があります。
 
