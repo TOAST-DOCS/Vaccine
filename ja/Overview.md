@@ -1,4 +1,4 @@
-## Security > Vaccine > コンソール使用ガイド
+## Security > Vaccine > 概要
 
 技術力の認定を受けたTrend Micro Deep Security製品を通して、悪性コードから利用者のサーバーを保護します。
 
