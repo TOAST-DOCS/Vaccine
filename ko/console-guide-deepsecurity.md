@@ -131,7 +131,7 @@ C:\Users\Administrator>
 ![vaccine_02_ko_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_ko_20210628.png)
 
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
-**사용시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
+**사용 시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
 
 ## Vaccine Agent 비활성화 절차
 
@@ -139,7 +139,7 @@ C:\Users\Administrator>
 
 1\. 웹 콘솔 사용 중지
 
-* **사용종료** 버튼을 클릭하여 백신 사용을 중지합니다.
+* **사용 종료** 버튼을 클릭하여 백신 사용을 중지합니다.
 ### Linux 계열 Agent
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
     * CentOS: rpm -e ds_agent 실행
