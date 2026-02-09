@@ -1,6 +1,6 @@
 ## Security > Vaccine > 概要
 
-技術力の認定を受けたTrend Micro Deep Security製品を通して、悪性コードから利用者のサーバーを保護します。
+技術力の認定を受けたAhnLab CPP, Trend Micro Deep Security製品を通して、悪性コードから利用者のサーバーを保護します。
 
 ## Vaccine Agentの有効化手順
 
