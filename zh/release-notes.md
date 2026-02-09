@@ -1,5 +1,13 @@
 ## Security > Vaccine > Release Notes
 
+### March 10, 2026
+
+#### Added Products
+* Added the AhnLab CPP product
+
+#### Added Features
+* Added support for AhnLab CPP integration with Service Gateway
+
 ### February 11, 2025
 
 #### Feature Updates
