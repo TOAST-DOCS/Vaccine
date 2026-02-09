@@ -25,7 +25,9 @@
 
 ## 특이 사항
 
-* Vaccine 서비스는 외부 네트워크에 접속할 수 있는 인스턴스에서만 이용할 수 있습니다.
+* 각 제품에서 지원하는 네트워크 환경은 아래와 같습니다.
+   * AhnLab CPP 제품은 외부 및 내부 네트워크 환경에서 이용할 수 있습니다.(내부 네트워크 환경은 Service Gateway 서비스 이용 필요)
+   * Deep Security 제품은 외부 네트워크 환경에서 이용할 수 있습니다.
 * 인스턴스 이미지 복제 시 Vaccine Agent 삭제 후 이미지 생성 기능 사용을 권장합니다.
     * 원본 및 복제된 인스턴스의 Vaccine이 오동작하게 됩니다.
     * Vaccine Agent를 포함하여 복제한 경우 사용 방법은 [사용자 가이드](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/)를 참고하시기 바랍니다.
