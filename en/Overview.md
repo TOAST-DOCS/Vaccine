@@ -25,7 +25,9 @@ With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users 
 
 ## Special Features 
 
-* The Vaccine Service is available only on instances which can access external network.
+* Each product supports the following network environments.
+   * AhnLab CPP projects are available in both internal and external network environments (a Service Gateway is required for the internal network environment).
+   * Deep Security products are available in external network environments.
 * To replicate instance images, it is recommended to delete vaccine agents first and create images. 
     * Otherwise, vaccines for the origin and replicated instances may not operate properly. 
     * See [User Guide](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/) on how to use replications, including vaccine agents. 
