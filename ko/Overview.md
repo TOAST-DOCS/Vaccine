@@ -1,6 +1,6 @@
 ## Security > Vaccine > 개요
 
-기술력을 인정받은 Trend Micro Deep Security 제품을 통해 악성코드로부터 이용자의 서버를 보호합니다.
+기술력을 인정받은 AhnLab CPP, Trend Micro Deep Security 제품을 통해 악성코드로부터 이용자의 서버를 보호합니다.
 
 ## 주요 기능
 
