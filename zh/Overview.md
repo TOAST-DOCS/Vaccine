@@ -1,6 +1,6 @@
 ## Security > Vaccine > Overview
 
-With recognized solutions of Deep Security by Trend Micro, users are protected on their servers against malicious codes. 
+With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users are protected on their servers against malicious codes. 
 
 ## Main Features 
 
