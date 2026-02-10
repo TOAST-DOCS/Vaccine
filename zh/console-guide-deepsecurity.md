@@ -1,4 +1,4 @@
-## Security > Vaccine > Console Guide 
+## Security > Vaccine > Console User Guide > Trend Micro(Deep Security)
 
 This document describes the procedure of enabling and disabling vaccine agents, and how to apply the service. 
 
