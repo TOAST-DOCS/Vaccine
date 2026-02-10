@@ -19,9 +19,9 @@
 * Agent 설치 실패 시 지원 서비스를 제공합니다.
 * 백신 이벤트 탐지 관련 문의 시 대응 서비스를 제공합니다.
 * 정상 파일 오진 신고 시 패턴 업데이트 서비스 및 파일 복원 가이드를 제공합니다.
-    * 자세한 내용은 [사용자 가이드](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/)를 참고하시기 바랍니다.
+    * 자세한 내용은 콘솔 사용 가이드를 참고하시기 바랍니다.
 * 백신으로 인해 인스턴스가 제대로 동작하지 않을 때 조치 가이드 및 기술 지원 서비스를 제공합니다.
-    * 조치 가이드 및 기술 지원에 대한 자세한 내용은 [사용자 가이드](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/)를 참고하시기 바랍니다.
+    * 조치 가이드 및 기술 지원에 대한 자세한 내용은 콘솔 사용 가이드를 참고하시기 바랍니다.
 
 ## 특이 사항
 
@@ -30,7 +30,7 @@
     * Deep Security 제품은 외부 네트워크 환경에서 이용할 수 있습니다.
 * 인스턴스 이미지 복제 시 Vaccine Agent 삭제 후 이미지 생성 기능 사용을 권장합니다.
     * 원본 및 복제된 인스턴스의 Vaccine이 오동작하게 됩니다.
-    * Vaccine Agent를 포함하여 복제한 경우 사용 방법은 [사용자 가이드](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/)를 참고하시기 바랍니다.
+    * Vaccine Agent를 포함하여 복제한 경우 사용 방법은 콘솔 사용 가이드를 참고하시기 바랍니다.
 * Auto Scale을 이용한 Vaccine 사용법은 고객 센터로 문의해 주시기 바랍니다.
 
 ## 서비스 구조
