@@ -19,9 +19,9 @@ With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users 
 * Provide supportive service when it fails to install agents.  
 * Respond to inquiries regarding vaccine event detection. 
 * Provide pattern updates and file restoration, if normal files are wrongly reported. 
-    * For more details, see [User Guide](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/).
+    * For more details, see Console User Guide.
 * Provide solution guides and technical support if an instance does not operate properly due to vaccine issues. 
-    * For more details on solutions and technical guides, see [User Guide](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/).
+    * For more details on solutions and technical guides, see Console User Guide.
 
 ## Special Features 
 
@@ -30,7 +30,7 @@ With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users 
     * Deep Security products are available in external network environments.
 * To replicate instance images, it is recommended to delete vaccine agents first and create images. 
     * Otherwise, vaccines for the origin and replicated instances may not operate properly. 
-    * See [User Guide](http://docs.toast.com/ko/Security/Vaccine/ko/console-guide/) on how to use replications, including vaccine agents. 
+    * See Console User Guide on how to use replications, including vaccine agents. 
 * Regarding the use of vaccines by auto scale, contact Customer Center.  
 
 ## Service Structure 
