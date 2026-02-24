@@ -8,13 +8,13 @@
 
 | 방향 | 포트 | 리전 | CIDR |
 | --- | --- | --- | ---- |
-| Egress | 4119, 4120, 4122 | 한국(판교), 한국(평촌) | 114.110.144.39/32 |
+| Egress | 5465, 5645, 8803, 8804, 8807, 8809, 8810 | 한국(판교), 한국(평촌) | 114.110.145.157/32 or {SG IP}|
 
 ## Vaccine Agent 활성화 절차
 
-인스턴스의 이미지 OS에 따라 백신 설치 스크립트를 불러옵니다.
+제품명, Instance OS, Service Gateway IP 주소에 따라 백신 설치 스크립트를 불러옵니다.
 
-![vaccine_01_ko_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_ko_2021_06.png)
+![vaccine_console_01_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_kr.png)
 
 ### Linux 계열 Agent
 
@@ -28,41 +28,58 @@
 * 생성한 스크립트 파일의 권한을 변경합니다.
 * 파일을 실행합니다.
 ```
-[root@vaccine-test ~]# cd ~
-[root@vaccine-test ~]# vi agent.sh
-[root@vaccine-test ~]# chmod 744 agent.sh
-[root@vaccine-test ~]# ./agent.sh
-/tmp/DownloadInstallAgentPackage: OK
-Downloading agent package ...
-curl https://114.110.144.39:4119/software/agent/RedHat_EL7/x86_64/ -o /tmp/agent.rpm --insecure --silent
-Installing agent package ...
-Preparing...                          ################################# [100%]
-Updating / installing...
-   1:ds_agent-10.0.0-2775.el7         ################################# [100%]
-Starting ds_agent (via systemctl):  [  OK  ]
-HTTP Status: 200 - OK
-Activation will be re-attempted 30 time(s) in case of failure
-dsa_control
-HTTP Status: 200 - OK
-Response:
-Attempting to connect to https://114.110.144.39:4120/
-SSL handshake completed successfully - initiating command session.
-Connected with (NONE) to peer at 114.110.144.39
-Received a 'GetHostInfo' command from the manager.
-Received a 'GetHostInfo' command from the manager.
-Received a 'SetDSMCert' command from the manager.
-Received a 'SetAgentCredentials' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetInterfaces' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetAgentStatus' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetHostMetaData' command from the manager.
-Received a 'SetSecurityConfiguration' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetAgentStatus' command from the manager.
-Command session completed.
-[root@vaccine-test ~]#
+[rocky@vaccine-test ~]$ cd ~
+[rocky@vaccine-test ~]$ vi agent.sh
+[rocky@vaccine-test ~]$ chmod 744 agent.sh
+[rocky@vaccine-test ~]$ ./agent.sh
+####### DownloadUrl :https://114.110.145.157:5645/web/agent/4/test-lin-setup.tar.gz #######
+####### filePath : /root/test-lin-setup.tar.gz #######
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 34.0M  100 34.0M    0     0  2041k      0  0:00:17  0:00:17 --:--:-- 2037k
+File Download Complete
+ahnagent-install.sh
+ahnagent-install.sh.ahc
+eal.tar
+ahnagent-install.conf
+Valid IP 114.110.145.157
+
+Start the installation for ahnagent
+
+Succeed to extract "eal.tar" archive
+Check Linux ID and version ...
+-> OS ID and version : ROCKY_9
+   OS Description : Rocky Linux 9.5 (Blue Onyx)
+"ROCKY_9" is supported
+[INFO] get to install path: /usr/local/ahnlab/cppagent
+The installed agent will be removed when installing a new agent
+
+    "Before uninstall ahnagent, Start the uninstallation for mgmt products"
+
+[INFO] get to install path: /usr/local/ahnlab/cppagent
+skip uninstallation of mgmt products
+
+    "Start to uninstall agent from SystemD"
+
+
+    "Complete to uninstall agent from SystemD"
+
+
+    "Complete the uninstallation for ahnagent package"
+
+[INFO] get to install path: /usr/local/ahnlab/cppagent
+Install ahnagent package ...
+Succeed to install ahnagent package to /usr/local/ahnlab/cppagent
+force server ip: 114.110.145.157
+appkey: P9tZYRpWDZBBTU3h
+user name: 9b273bb9-edb4-42f1-b11b-4d1befcde97b
+Created symlink /etc/systemd/system/multi-user.target.wants/cppagent.service → /usr/lib/systemd/system/cppagent.service.
+Succeed to enable ahnagent
+Succeed to start ahnagent
+
+    "Complete the installation for ahnagent package"
+
+[rocky@vaccine-test ~]$
 ```
 
 ### Windows 계열 Agent
@@ -77,76 +94,105 @@ Command session completed.
 * 관리자 권한으로 **명령 프롬프트**(cmd) 창을 활성화합니다.
 * powershell -file "파일 경로/파일명" 형태로 실행합니다.
 ```
-Microsoft Windows [Version 6.3.9600]
-(c) 2013 Microsoft Corporation. All rights reserved.
+C:\Users\administrator>powershell -file C:\Users\administrator\Desktop\agent.ps1
+PowerShell Major Version : 5.1
+DownloadType : System.Net.Object.WebClient Download, DownloadUrl : https://114.110.145.157:5645/web/agent/3/test-win-setup.exeFile Install : C:\Users\ADMINI~1\AppData\Local\Temp\2\test-win-setup.exe /F "114.110.145.157" /A "P9tZYRpWDZBBTU3h" /U "da9b75db-269e-48ad-ba93-99949303c256"
+File Install Complete!!
 
-C:\Users\Administrator>powershell -file "agent.ps1"
-
-
-    디렉터리: C:\Users\Administrator\AppData\Roaming\Trend Micro\Deep Security Agent
-
-
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
-d----      2018-06-05   오후 2:37            installer
-기록이 시작되었습니다. 출력 파일은 C:\Users\Administrator\AppData\Roaming\Trend Micro\Deep Security Agent\installer\dsa_deploy.log입니다.
-오후 2:37:23 - DSA download started
-오후 2:37:23 - Download Deep Security Agent Package
-https://114.110.144.39:4119/software/agent/Windows/x86_64/
-오후 2:37:24 - Downloaded File Size:
-13897728
-오후 2:37:24 - DSA install started
-오후 2:37:24 - Installer Exit Code:
-0
-오후 2:37:32 - DSA activation started
-HTTP Status: 200 - OK
-Activation will be re-attempted 30 time(s) in case of failure
-dsa_control
-HTTP Status: 200 - OK
-Response:
-Attempting to connect to https://114.110.144.39:4120/
-SSL handshake completed successfully - initiating command session.
-Connected with AES256-SHA256 to peer at 114.110.144.39
-Received a 'GetHostInfo' command from the manager.
-Received a 'GetHostInfo' command from the manager.
-Received a 'SetDSMCert' command from the manager.
-Received a 'SetAgentCredentials' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetInterfaces' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetAgentStatus' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetHostMetaData' command from the manager.
-Received a 'SetSecurityConfiguration' command from the manager.
-Received a 'GetAgentEvents' command from the manager.
-Received a 'GetAgentStatus' command from the manager.
-Command session completed.
-기록이 중지되었습니다. 출력 파일은 C:\Users\Administrator\AppData\Roaming\Trend Micro\Deep Security Agent\installer\dsa_deploy.log입니다.
-오후 2:38:29 - DSA Deployment Finished
-
-C:\Users\Administrator>
+C:\Users\administrator>
 ```
 ### 사용 시작
 
-![vaccine_02_ko_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_ko_20210628.png)
-
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
-**사용 시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
+Agent 설치 후 자동으로 활성화됩니다.
 
 ## Vaccine Agent 비활성화 절차
 
-![vaccine_03_ko_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_ko_210628.png)
+![vaccine_console_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_02_kr.png)
 
 1\. 웹 콘솔 사용 중지
 
 * **사용 종료** 버튼을 클릭하여 백신 사용을 중지합니다.
 ### Linux 계열 Agent
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
-    * CentOS: rpm -e ds_agent 실행
-    * Debian/Ubuntu: apt-get remove ds-agent 실행
+    * /usr/local/bin/uninstall-cppagent 실행
 
 ### Windows 계열 Agent
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
-    * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
+    * 프로그램 및 기능 메뉴에서 **AhnLab Security Agent(CPP)**를 삭제합니다.
 
 ## Vaccine 서비스 사용법
+
+### 악성코드 분석 가이드
+* CPP 는 파일 복원 가이드를 제공하지 않고 있습니다. 악성코드 분석이 필요할 경우 분석 파일 수집 후 고객센터로 분석을 요청합니다.
+    * Linux
+        * 악성코드 진단 로그 파일 추출
+            * /usr/local/ahnlab/v3net/bin/v3cli 입력하여 CLI 모드 진입
+            * show scanlogs export 입력하여 악성코드 진단 로그 파일 export
+            * quit 입력 (CLI 모드 종료)
+            * /usr/local/ahnlab/v3net/tmp/ 경로에 저장된 virus.csv 파일 전달
+        * 분석 로그 추출
+            * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v 명령어 실행
+            * 명령어 실행 경로에 저장된 ahnreport.arc 파일 전달
+    * Windows
+        * 악성코드 진단 로그 파일 추출
+            * 작업 표시줄 우측 하단에 V3 아이콘 더블 클릭
+            * V3 메인 화면에서 ‘도구’ > ‘로그’ 순으로 클릭
+            * ‘진단 로그’ > ‘파일로 저장’ 순으로 클릭합니다.
+            * 저장된 악성코드 진단 로그 파일(csv) 전달
+        * 악성코드 분석 로그 추출
+            * C:\Program Files (x86)\AhnLab\CPP Agent\1.0\bin\AhnRpt.exe 실행
+            * 상단 '악성코드 신고' 클릭 후 사용자 동의 진행
+            * '상세 내용 항목'에 악성코드 관련 문의 사항 기입 후 '저장'
+            * 로그 수집 파일의 저장 경로 및 파일명 입력 후 저장
+            * 로그 수집 완료 후 저장 경로 내 파일(arc 압축 파일) 전달
+
+### 에이전트 상태 체크 가이드
+* Linux
+    * systemctl status cppagent 입력[root@vaccine-test ~]# systemctl status cppagent
+```
+[root@vaccine-test ~]# systemctl status cppagent
+● cppagent.service - "AhnLab Security Agent Linux Service"
+   Loaded: loaded (/usr/lib/systemd/system/cppagent.service; enabled; vendor preset: di>
+   Active: active (running) since Thu 2026-02-05 14:53:03 KST; 17min ago
+ Main PID: 19486 (ahnagent)
+    Tasks: 9 (limit: 48701)
+   Memory: 6.2M
+   CGroup: /system.slice/cppagent.service
+           └─19486 /usr/local/ahnlab/cppagent/bin/ahnagent
+```
+* Windows
+    * 명령프롬프트(cmd) 창 활성화
+    * sc query CPPAgentSvc 입력C:\Users\administrator>sc query CPPAgentSvc
+```
+C:\Users\administrator>sc query CPPAgentSvc
+
+SERVICE_NAME: CPPAgentSvc
+        종류               : 10  WIN32_OWN_PROCESS
+        상태               : 4  RUNNING
+                                (NOT_STOPPABLE, NOT_PAUSABLE, ACCEPTS_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        검사점             : 0x0
+        WAIT_HINT          : 0x0
+```
+
+### 분석 가이드
+* 에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객센터로 분석을 요청합니다.
+    * Linux
+        * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v 명령어 실행
+        * 명령어 실행 경로에 저장된 ahnreport.arc 파일 전달
+    * Windows
+        * C:\Program Files (x86)\AhnLab\CPP Agent\1.0\bin\AhnRpt.exe 실행
+        * 상단 '제품 오류 신고' 클릭 후 사용자 동의 진행
+        * '상세 내용 항목'에 문의 증상에 대한 내용 기입 후 '저장'
+        * 로그 수집 파일의 저장 경로 및 파일명 입력 후 저장
+        * 로그 수집 완료 후 저장 경로 내 파일(arc 압축파일) 전달
+
+### 삭제 가이드
+* Linux
+    * 인스턴스에 접속하여 CPP Agent를 삭제합니다.
+    * /usr/local/bin/uninstall-cppagent 실행
+* Windows
+    * 인스턴스에 접속하여 CPP Agent를 삭제합니다.
+    * ‘제어판’ > ‘프로그램 및 기능’에서 ‘AhnLab Security Agent(CPP)’ 선택 > 제거
