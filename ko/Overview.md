@@ -35,4 +35,4 @@
 
 ## 서비스 구조
 
-![vaccine_00_201903.png](https://static.toastoven.net/prod_vaccine/vaccine_img_kr.png)
+![vaccine_img_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_img_kr.png)
