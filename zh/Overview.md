@@ -35,4 +35,4 @@ With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users 
 
 ## Service Structure 
 
-![vaccine_00_201903_en.png](https://static.toastoven.net/prod_vaccine/vaccine_00_201903_en.png)
+![vaccine_img_en.png](https://static.toastoven.net/prod_vaccine/vaccine_img_en.png)
