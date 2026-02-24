@@ -108,7 +108,7 @@ Agent 설치 후 자동으로 활성화됩니다.
 
 ## Vaccine Agent 비활성화 절차
 
-![vaccine_console_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_02_kr.png)
+![vaccine_console_ahnlabcpp_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_ahnlabcpp_02_kr.png)
 
 1\. 웹 콘솔 사용 중지
 
