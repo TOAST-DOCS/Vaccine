@@ -119,16 +119,9 @@ Agent 설치 후 자동으로 활성화됩니다.
 
 ![vaccine_console_ahnlabcpp_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_ahnlabcpp_02_kr.png)
 
-1\. 웹 콘솔 사용 중지
+* 웹 콘솔 사용 중지
 
-* **사용 종료** 버튼을 클릭하여 백신 사용을 중지합니다.
-### Linux 계열 Agent
-* 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
-    * /usr/local/bin/uninstall-cppagent 실행
-
-### Windows 계열 Agent
-* 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
-    * 프로그램 및 기능 메뉴에서 **AhnLab Security Agent(CPP)**를 삭제합니다.
+    * **사용 종료** 버튼을 클릭하여 백신 사용을 중지합니다.
 
 ## Vaccine 서비스 사용법
 
