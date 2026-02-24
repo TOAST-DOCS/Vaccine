@@ -35,4 +35,4 @@
 
 ## サービス構造
 
-![vaccine_00_201903_en.png](https://static.toastoven.net/prod_vaccine/vaccine_00_201903_en.png)
+![vaccine_img_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_img_jp.png)
