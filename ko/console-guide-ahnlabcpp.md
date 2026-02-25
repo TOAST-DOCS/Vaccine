@@ -12,7 +12,7 @@
 
 
 ## Vaccine 서비스 게이트웨이 연동
-서비스 게이트웨이를 이용하면 NHN Cloud 내부에서 클라이언트와 Vaccin 서버가 통신할 때 외부 인터넷을 경유하지 않고, 내부 네트워크로 통신할 수 있습니다.
+서비스 게이트웨이를 이용하면 NHN Cloud 내부에서 클라이언트와 Vaccine 서버가 통신할 때 외부 인터넷을 경유하지 않고, 내부 네트워크로 통신할 수 있습니다.
 Vaccine 서비스 게이트웨이를 연동하는 방법은 아래와 같습니다.
 
 1. Network > Service Gateway 페이지로 이동하여 **+ 서비스 게이트웨이 생성**을 클릭합니다.
@@ -138,7 +138,7 @@ Agent 설치 후 자동으로 활성화됩니다.
         * 악성코드 진단 로그 파일 추출
             * 작업 표시줄 우측 하단에 V3 아이콘 더블 클릭
             * V3 메인 화면에서 ‘도구’ > ‘로그’ 순으로 클릭
-            * ‘진단 로그’ > ‘파일로 저장’ 순으로 클릭합니다.
+            * ‘진단 로그’ > ‘파일로 저장’ 순으로 클릭
             * 저장된 악성코드 진단 로그 파일(csv) 전달
         * 악성코드 분석 로그 추출
             * C:\Program Files (x86)\AhnLab\CPP Agent\1.0\bin\AhnRpt.exe 실행
@@ -149,7 +149,7 @@ Agent 설치 후 자동으로 활성화됩니다.
 
 ### 에이전트 상태 체크 가이드
 * Linux
-    * systemctl status cppagent 입력[root@vaccine-test ~]# systemctl status cppagent
+    * systemctl status cppagent 입력
 ```
 [root@vaccine-test ~]# systemctl status cppagent
 ● cppagent.service - "AhnLab Security Agent Linux Service"
@@ -163,7 +163,7 @@ Agent 설치 후 자동으로 활성화됩니다.
 ```
 * Windows
     * 명령프롬프트(cmd) 창 활성화
-    * sc query CPPAgentSvc 입력C:\Users\administrator>sc query CPPAgentSvc
+    * sc query CPPAgentSvc 입력
 ```
 C:\Users\administrator>sc query CPPAgentSvc
 
