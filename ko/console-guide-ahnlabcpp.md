@@ -178,7 +178,7 @@ SERVICE_NAME: CPPAgentSvc
 ```
 
 ### 분석 가이드
-* 에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객센터로 분석을 요청합니다.
+* 에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객지원으로 분석을 요청합니다.
     * Linux
         * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v 명령어 실행
         * 명령어 실행 경로에 저장된 ahnreport.arc 파일 전달
