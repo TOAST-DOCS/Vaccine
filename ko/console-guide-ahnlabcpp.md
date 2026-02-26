@@ -129,7 +129,7 @@ Agent 설치 후 자동으로 활성화됩니다.
         * 악성코드 진단 로그 파일 추출
             * /usr/local/ahnlab/v3net/bin/v3cli 입력하여 CLI 모드 진입
             * show scanlogs export 입력하여 악성코드 진단 로그 파일 export
-            * quit 입력 (CLI 모드 종료)
+            * quit 입력(CLI 모드 종료)
             * /usr/local/ahnlab/v3net/tmp/ 경로에 저장된 virus.csv 파일 전달
         * 분석 로그 추출
             * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v 명령어 실행
