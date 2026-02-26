@@ -100,7 +100,7 @@ Succeed to start ahnagent
 3\. 관리자 권한으로 Agent 스크립트를 생성하고 실행합니다.
 
 * 메모장과 같은 텍스트 에디터로 스크립트 파일을 생성합니다.
-* 관리자 권한으로 **명령 프롬프트**(cmd) 창을 활성화합니다.
+* 관리자 권한으로 명령 프롬프트(cmd) 창을 활성화합니다.
 * powershell -file "파일 경로/파일명" 형태로 실행합니다.
 ```
 C:\Users\administrator>powershell -file C:\Users\administrator\Desktop\agent.ps1
