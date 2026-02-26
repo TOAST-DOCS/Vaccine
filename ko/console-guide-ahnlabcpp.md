@@ -162,7 +162,7 @@ Agent 설치 후 자동으로 활성화됩니다.
            └─19486 /usr/local/ahnlab/cppagent/bin/ahnagent
 ```
 * Windows
-    * 명령프롬프트(cmd) 창 활성화
+    * 명령 프롬프트(cmd) 창 활성화
     * sc query CPPAgentSvc 입력
 ```
 C:\Users\administrator>sc query CPPAgentSvc
