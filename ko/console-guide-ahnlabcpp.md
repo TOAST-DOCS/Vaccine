@@ -2,7 +2,7 @@
 
 여기에서는 Vaccine Agent 활성화 및 비활성화 절차와 서비스 사용법을 설명합니다.
 
-## 보안 그룹(Security Group) 설정
+## 보안 그룹(Security Groups) 설정
 
 백신 서버와 통신하려면 보안 그룹에 아래 내용을 추가합니다.
 
@@ -15,7 +15,7 @@
 서비스 게이트웨이를 이용하면 NHN Cloud 내부에서 클라이언트와 Vaccine 서버가 통신할 때 외부 인터넷을 경유하지 않고, 내부 네트워크로 통신할 수 있습니다.
 Vaccine 서비스 게이트웨이를 연동하는 방법은 아래와 같습니다.
 
-1. Network > Service Gateway 페이지로 이동하여 **+ 서비스 게이트웨이 생성**을 클릭합니다.
+1. **Network > Service Gateway**에서 **+ 서비스 게이트웨이 생성**을 클릭합니다.
 2. 생성할 서비스 게이트웨이의 이름, VPC, 서브넷을 입력하고 서비스를 **Vaccine**으로 선택한 뒤 **확인**을 클릭하면 Vaccine 서비스 게이트웨이가 생성됩니다.
 
 
@@ -27,7 +27,7 @@ Vaccine 서비스 게이트웨이를 연동하는 방법은 아래와 같습니�
 
 ### Linux 계열 Agent
 
-1\. 설치 스크립트를 복사하려면 **클립보드 복사**를 클릭합니다.
+1\. 설치 스크립트를 복사하려면 **클립보드로 복사**를 클릭합니다.
 
 2\. 설치 대상 인스턴스 터미널에 접속합니다.
 
@@ -100,7 +100,7 @@ Succeed to start ahnagent
 3\. 관리자 권한으로 Agent 스크립트를 생성하고 실행합니다.
 
 * 메모장과 같은 텍스트 에디터로 스크립트 파일을 생성합니다.
-* 관리자 권한으로 **명령 프롬프트**(cmd) 창을 활성화합니다.
+* 관리자 권한으로 명령 프롬프트(cmd) 창을 활성화합니다.
 * powershell -file "파일 경로/파일명" 형태로 실행합니다.
 ```
 C:\Users\administrator>powershell -file C:\Users\administrator\Desktop\agent.ps1
@@ -119,17 +119,17 @@ Agent 설치 후 자동으로 활성화됩니다.
 
 ![vaccine_console_ahnlabcpp_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_ahnlabcpp_02_kr.png)
 
-**사용 종료** 버튼을 클릭하여 백신 사용을 중지합니다.
+**사용 종료**를 클릭하여 백신 사용을 중지합니다.
 
 ## Vaccine 서비스 사용법
 
 ### 악성코드 분석 가이드
-* CPP 는 파일 복원 가이드를 제공하지 않고 있습니다. 악성코드 분석이 필요할 경우 분석 파일 수집 후 고객센터로 분석을 요청합니다.
+* CPP는 파일 복원 가이드를 제공하지 않습니다. 악성코드 분석이 필요할 경우 분석 파일 수집 후 고객지원으로 분석을 요청합니다.
     * Linux
         * 악성코드 진단 로그 파일 추출
             * /usr/local/ahnlab/v3net/bin/v3cli 입력하여 CLI 모드 진입
             * show scanlogs export 입력하여 악성코드 진단 로그 파일 export
-            * quit 입력 (CLI 모드 종료)
+            * quit 입력(CLI 모드 종료)
             * /usr/local/ahnlab/v3net/tmp/ 경로에 저장된 virus.csv 파일 전달
         * 분석 로그 추출
             * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v 명령어 실행
@@ -137,13 +137,13 @@ Agent 설치 후 자동으로 활성화됩니다.
     * Windows
         * 악성코드 진단 로그 파일 추출
             * 작업 표시줄 우측 하단에 V3 아이콘 더블 클릭
-            * V3 메인 화면에서 ‘도구’ > ‘로그’ 순으로 클릭
-            * ‘진단 로그’ > ‘파일로 저장’ 순으로 클릭
+            * V3 메인 화면에서 **도구** > **로그**순으로 클릭
+            * **진단 로그** > **파일로 저장**순으로 클릭
             * 저장된 악성코드 진단 로그 파일(csv) 전달
         * 악성코드 분석 로그 추출
             * C:\Program Files (x86)\AhnLab\CPP Agent\1.0\bin\AhnRpt.exe 실행
-            * 상단 '악성코드 신고' 클릭 후 사용자 동의 진행
-            * '상세 내용 항목'에 악성코드 관련 문의 사항 기입 후 '저장'
+            * 상단 **악성코드 신고** 클릭 후 사용자 동의 진행
+            * **상세 내용 항목**에 악성코드 관련 문의 사항 기입 후 저장
             * 로그 수집 파일의 저장 경로 및 파일명 입력 후 저장
             * 로그 수집 완료 후 저장 경로 내 파일(arc 압축 파일) 전달
 
@@ -162,7 +162,7 @@ Agent 설치 후 자동으로 활성화됩니다.
            └─19486 /usr/local/ahnlab/cppagent/bin/ahnagent
 ```
 * Windows
-    * 명령프롬프트(cmd) 창 활성화
+    * 명령 프롬프트(cmd) 창 활성화
     * sc query CPPAgentSvc 입력
 ```
 C:\Users\administrator>sc query CPPAgentSvc
@@ -178,16 +178,16 @@ SERVICE_NAME: CPPAgentSvc
 ```
 
 ### 분석 가이드
-* 에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객센터로 분석을 요청합니다.
+* 에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객지원으로 분석을 요청합니다.
     * Linux
         * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v 명령어 실행
         * 명령어 실행 경로에 저장된 ahnreport.arc 파일 전달
     * Windows
         * C:\Program Files (x86)\AhnLab\CPP Agent\1.0\bin\AhnRpt.exe 실행
-        * 상단 '제품 오류 신고' 클릭 후 사용자 동의 진행
-        * '상세 내용 항목'에 문의 증상에 대한 내용 기입 후 '저장'
+        * 상단 **제품 오류 신고** 클릭 후 사용자 동의 진행
+        * **상세 내용 항목**에 문의 증상에 대한 내용 기입 후 저장
         * 로그 수집 파일의 저장 경로 및 파일명 입력 후 저장
-        * 로그 수집 완료 후 저장 경로 내 파일(arc 압축파일) 전달
+        * 로그 수집 완료 후 저장 경로 내 파일(arc 압축 파일) 전달
 
 ### 삭제 가이드
 * Linux
@@ -195,7 +195,7 @@ SERVICE_NAME: CPPAgentSvc
     * /usr/local/bin/uninstall-cppagent 실행
 * Windows
     * 인스턴스에 접속하여 CPP Agent를 삭제합니다.
-    * ‘제어판’ > ‘프로그램 및 기능’에서 ‘AhnLab Security Agent(CPP)’ 선택 > 제거
+    * **제어판 > 프로그램 및 기능**에서 **AhnLab Security Agent(CPP)** 선택하여 제거
  
 ## 운영 문의
 
@@ -209,6 +209,6 @@ SERVICE_NAME: CPPAgentSvc
 
 ### 문의 방법
 
-1\. 문의 방법: **고객 센터 > 1:1 문의**
+1\. 문의 방법: **고객지원 > 문의하기**
 2\. 대응 시간: 평일 09:00~18:00
 
