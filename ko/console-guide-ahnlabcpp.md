@@ -119,7 +119,7 @@ Agent 설치 후 자동으로 활성화됩니다.
 
 ![vaccine_console_ahnlabcpp_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_ahnlabcpp_02_kr.png)
 
-**사용 종료** 버튼을 클릭하여 백신 사용을 중지합니다.
+**사용 종료**를 클릭하여 백신 사용을 중지합니다.
 
 ## Vaccine 서비스 사용법
 
