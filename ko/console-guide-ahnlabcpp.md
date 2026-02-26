@@ -184,7 +184,7 @@ SERVICE_NAME: CPPAgentSvc
         * 명령어 실행 경로에 저장된 ahnreport.arc 파일 전달
     * Windows
         * C:\Program Files (x86)\AhnLab\CPP Agent\1.0\bin\AhnRpt.exe 실행
-        * 상단 '제품 오류 신고' 클릭 후 사용자 동의 진행
+        * 상단 **제품 오류 신고** 클릭 후 사용자 동의 진행
         * '상세 내용 항목'에 문의 증상에 대한 내용 기입 후 '저장'
         * 로그 수집 파일의 저장 경로 및 파일명 입력 후 저장
         * 로그 수집 완료 후 저장 경로 내 파일(arc 압축파일) 전달
