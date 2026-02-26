@@ -195,7 +195,7 @@ SERVICE_NAME: CPPAgentSvc
     * /usr/local/bin/uninstall-cppagent 실행
 * Windows
     * 인스턴스에 접속하여 CPP Agent를 삭제합니다.
-    * ‘제어판’ > ‘프로그램 및 기능’에서 ‘AhnLab Security Agent(CPP)’ 선택 > 제거
+    * **제어판 > 프로그램 및 기능**에서 **AhnLab Security Agent(CPP)** 선택하여 제거
  
 ## 운영 문의
 
