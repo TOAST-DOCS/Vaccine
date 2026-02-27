@@ -128,14 +128,14 @@ C:\Users\Administrator>
 ```
 ### 使用開始
 
-![vaccine_02_jp_2010628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_jp_20210628.png)
+![vaccine_console_deepsecurity_02_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_02_jp.png)
 
 更新をクリックすると、状況リストにインストールされたAgent情報が表示されます。
 **使用開始**ボタンをクリックすると、サービスの使用を開始します。
 
 ## Vaccine Agentの無効化手順
 
-![vaccine_03_jp_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_jp_210628.png)
+![vaccine_console_deepsecurity_03_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_03_jp.png)
 
 1\. Webコンソール使用中止
 
