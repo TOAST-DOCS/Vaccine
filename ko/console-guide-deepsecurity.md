@@ -128,14 +128,14 @@ C:\Users\Administrator>
 ```
 ### 사용 시작
 
-![vaccine_02_ko_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_ko_20210628.png)
+![vaccine_console_deepsecurity_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_02_kr.png)
 
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
 **사용 시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
 
 ## Vaccine Agent 비활성화 절차
 
-![vaccine_03_ko_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_ko_210628.png)
+![vaccine_console_deepsecurity_03_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_03_kr.png)
 
 1\. 웹 콘솔 사용 중지
 
