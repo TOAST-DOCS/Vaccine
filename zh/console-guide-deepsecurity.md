@@ -251,8 +251,8 @@ Regarding the use of vaccines by auto scale, contact Customer Center.
 4\. Wrong report of normal files and restorations 
 5\. Solutions to abnormal instance operations due to vaccine issues, and cause analysis 
 
-### To Inquire 
+### How to Inquire
 
-1\. To Inquire: Go to **Customer Center > 1:1 Inquiry**
-2\. Business Hours: 9 to 6, weekdays
+1. How to Inquire: **Customer Support > Contact Us**
+2. Business Hours: Mon - Fri 9 AM - 6 PM
 
