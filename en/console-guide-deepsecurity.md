@@ -1,4 +1,4 @@
-## Security > Vaccine > Console Guide 
+## Security > Vaccine > Console User Guide > Trend Micro(Deep Security)
 
 This document describes the procedure of enabling and disabling vaccine agents, and how to apply the service. 
 
@@ -14,7 +14,7 @@ To communicated with the vaccine server, add the following content to the securi
 
 Import vaccine installation script, for each OS of an instance image. 
 
-![vaccine_01_en_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_en_2021_06.png)
+![vaccine_console_01_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_en.png)
 
 ### For Linux 
 
@@ -128,14 +128,14 @@ C:\Users\Administrator>
 ```
 ### Start Service 
 
-![vaccine_02_en_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_en_20210628.png)
+![vaccine_console_deepsecurity_02_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_02_en.png)
 
 Click Refresh to find information of agents that are installed on the list of current status. 
 Click **Start Service** to start the service. 
 
 ## Disabling Vaccine Agents 
 
-![vaccine_03_en_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_en_210628.png)
+![vaccine_console_deepsecurity_03_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_03_en.png)
 
 1\. Suspend Web Console Service 
 
@@ -251,7 +251,7 @@ Regarding the use of vaccines by auto scale, contact Customer Center.
 4\. Wrong report of normal files and restorations 
 5\. Solutions to abnormal instance operations due to vaccine issues, and cause analysis 
 
-### To Inquire 
+### How to Inquire
 
-1\. To Inquire: Go to **Customer Center > 1:1 Inquiry**
-2\. Business Hours: 9 to 6, weekdays
+1. How to Inquire: **Customer Support > Contact Us**
+2. Business Hours: Mon - Fri 9 AM - 6 PM

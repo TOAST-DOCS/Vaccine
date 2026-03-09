@@ -1,8 +1,8 @@
-## Security > Vaccine > 콘솔 사용 가이드
+## Security > Vaccine > 콘솔 사용 가이드 > Trend Micro(Deep Security)
 
 여기에서는 Vaccine Agent 활성화 및 비활성화 절차와 서비스 사용법을 설명합니다.
 
-## 보안 그룹(Security Group) 설정
+## 보안 그룹(Security Groups) 설정
 
 백신 서버와 통신하려면 보안 그룹에 아래 내용을 추가합니다.
 
@@ -12,13 +12,13 @@
 
 ## Vaccine Agent 활성화 절차
 
-인스턴스의 이미지 OS에 따라 백신 설치 스크립트를 불러옵니다.
+제품명, Instance OS, Service Gateway IP 주소에 따라 백신 설치 스크립트를 불러옵니다.
 
-![vaccine_01_ko_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_ko_2021_06.png)
+![vaccine_console_01_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_kr.png)
 
 ### Linux 계열 Agent
 
-1\. 설치 스크립트를 복사하려면 **클립보드 복사**를 클릭합니다.
+1\. 설치 스크립트를 복사하려면 **클립보드로 복사**를 클릭합니다.
 
 2\. 설치 대상 인스턴스 터미널에 접속합니다.
 
@@ -74,7 +74,7 @@ Command session completed.
 3\. 관리자 권한으로 Agent 스크립트를 생성하고 실행합니다.
 
 * 메모장과 같은 텍스트 에디터로 스크립트 파일을 생성합니다.
-* 관리자 권한으로 **명령 프롬프트**(cmd) 창을 활성화합니다.
+* 관리자 권한으로 명령 프롬프트(cmd) 창을 활성화합니다.
 * powershell -file "파일 경로/파일명" 형태로 실행합니다.
 ```
 Microsoft Windows [Version 6.3.9600]
@@ -128,18 +128,18 @@ C:\Users\Administrator>
 ```
 ### 사용 시작
 
-![vaccine_02_ko_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_ko_20210628.png)
+![vaccine_console_deepsecurity_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_02_kr.png)
 
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
-**사용시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
+**사용 시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
 
 ## Vaccine Agent 비활성화 절차
 
-![vaccine_03_ko_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_ko_210628.png)
+![vaccine_console_deepsecurity_03_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_03_kr.png)
 
 1\. 웹 콘솔 사용 중지
 
-* **사용종료** 버튼을 클릭하여 백신 사용을 중지합니다.
+* **사용 종료**를 클릭하여 백신 사용을 중지합니다.
 ### Linux 계열 Agent
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
     * CentOS: rpm -e ds_agent 실행
@@ -181,7 +181,7 @@ AgentStatus.agentState: green
     * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
    
 ### 분석 가이드
-* **에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객 센터로 분석을 요청합니다.**
+* **에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객지원으로 분석을 요청합니다.**
     * Linux
         * /opt/ds_agent/dsa_control -d 실행
         * /var/opt/ds_agent/diag/랜덤10자리숫자.zip 파일 분석 요청
@@ -198,7 +198,7 @@ AgentStatus.agentState: green
        * Debian/Ubuntu: apt-get remove ds-agent 실행
 * Windows 계열 Agent
     * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
-       * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
+       * **프로그램 및 기능**에서 **Trend Micro Deep Security Agent** 선택하여 제거
 
 ### 이미지 복제 시 사용 가이드
 
@@ -255,5 +255,5 @@ Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의�
 
 ### 문의 방법
 
-1\. 문의 방법: **고객 센터 > 1:1 문의**
+1\. 문의 방법: **고객지원 > 문의하기**
 2\. 대응 시간: 평일 09:00~18:00

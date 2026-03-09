@@ -1,4 +1,4 @@
-## Security > Vaccine > Console Guide 
+## Security > Vaccine > Console User Guide > Trend Micro(Deep Security)
 
 This document describes the procedure of enabling and disabling vaccine agents, and how to apply the service. 
 
@@ -14,7 +14,7 @@ To communicated with the vaccine server, add the following content to the securi
 
 Import vaccine installation script, for each OS of an instance image. 
 
-![vaccine_01_en_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_en_2021_06.png)
+![vaccine_console_01_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_en.png)
 
 ### For Linux 
 
@@ -109,7 +109,7 @@ SSL handshake completed successfully - initiating command session.
 Connected with AES256-SHA256 to peer at 114.110.144.39
 Received a 'GetHostInfo' command from the manager.
 Received a 'GetHostInfo' command from the manager.
-Received a 'SetCert' command from the manager.
+Received a 'SetDSMCert' command from the manager.
 Received a 'SetAgentCredentials' command from the manager.
 Received a 'GetAgentEvents' command from the manager.
 Received a 'GetInterfaces' command from the manager.
@@ -128,14 +128,14 @@ C:\Users\Administrator>
 ```
 ### Start Service 
 
-![vaccine_02_en_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_en_20210628.png)
+![vaccine_console_deepsecurity_02_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_02_en.png)
 
 Click Refresh to find information of agents that are installed on the list of current status. 
 Click **Start Service** to start the service. 
 
 ## Disabling Vaccine Agents 
 
-![vaccine_03_en_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_en_210628.png)
+![vaccine_console_deepsecurity_03_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_03_en.png)
 
 1\. Suspend Web Console Service 
 
@@ -168,10 +168,6 @@ Click **Start Service** to start the service.
 * Linux
     * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
 
-### Guide for Agent Status Check
-* Linux
-    * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
-
 ```
 [root@vaccine-test ~]# cd /opt/ds_agent/
 [root@vaccine-test ds_agent]# ./dsa_query -c GetAgentStatus | grep AgentStatus.agentState
@@ -179,18 +175,12 @@ AgentStatus.agentState: green
 [root@vaccine-test ds_agent]#
 ```
 
-#### For Linux 
-* Access instance and delete vaccine agent. 
-    * CentOS: Execute rpm -e ds_agent 
-    * Debian/Ubuntu: Execute apt-get remove ds-agent 
+* Windows
+    * Right-click Agent in the window tray and select Open Console > Confirm "(Running)" 
+    * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
 
-#### For Windows 
-* Access instance and delete vaccine agent. 
-    * On Programs and Features, delete **Trend Micro Deep Security Agent**.
-
-2\. Deliver Analysis Files 
-
-* To analyze causes to prevent recurrence, collect files of the following paths and request to Customer Center for analysis.  
+### Analysis Guide
+* **Collect the following files to request analysis from Customer Center when the agent is offline or inactive**
     * Linux
         * Execute /opt/ds_agent/dsa_control -d 
         * Request for analysis of /var/opt/ds_agent/diag/random 10-digit numbers.zip file
@@ -199,6 +189,15 @@ AgentStatus.agentState: green
         * Execute C:\Program Files\Trend Micro\Deep Security Agent\dsa_control -d 
         * Request for analysis of C:\Program Data\Trend Micro\Deep Security Agent\diag\random 10-digit numbers. zip file 
 * To analyze in more details, when an issue occurs, you may perform debugging first and request for more created files.
+
+### Delete Guide
+* For Linux
+    * Access the instance to delete the Vaccine Agent.
+       * CentOS: Execute rpm -e ds_agent
+       * Debian/Ubuntu: Execute apt-get remove ds-agent
+* For Windows
+    * Access the instance to delete the Vaccine Agent.
+       * Delete **Trend Micro Deep Security Agent** from Programs and Features.
 
 ### User Guide for Image Replication 
 
@@ -215,14 +214,13 @@ This guide regards to using vaccines for the creation of private image-based ins
 
 1\. Agent Script for Linux
 
-
 ```
 touch /etc/use_dsa_with_iptables
 
 IP=`ifconfig eth0 | grep -w -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1`
 uuidInfo=`curl -s 169.254.169.254/openstack/latest/meta_data.json | python -c 'import json,sys;obj=json.load(sys.stdin);print (str(obj["uuid"])+":"+str("user_metadata.server_group" in obj["meta"]))'`
 /opt/ds_agent/dsa_control -r
-/opt/ds_agent/dsa_control -a ://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+/opt/ds_agent/dsa_control -a dsm://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
 
 2\. Agent Script for Windows 
@@ -253,8 +251,7 @@ Regarding the use of vaccines by auto scale, contact Customer Center.
 4\. Wrong report of normal files and restorations 
 5\. Solutions to abnormal instance operations due to vaccine issues, and cause analysis 
 
-### To Inquire 
+### How to Inquire
 
-1\. To Inquire: Go to **Customer Center > 1:1 Inquiry**
-2\. Business Hours: 9 to 6, weekdays
-
+1. How to Inquire: **Customer Support > Contact Us**
+2. Business Hours: Mon - Fri 9 AM - 6 PM

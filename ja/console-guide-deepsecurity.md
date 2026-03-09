@@ -1,4 +1,4 @@
-## Security > Vaccine > コンソール使用ガイド
+## Security > Vaccine > コンソール使用ガイド > Trend Micro(Deep Security)
 
 ここではVaccine Agentの有効化および無効化手の順と、サービス使用方法を説明します。
 
@@ -14,7 +14,7 @@
 
 インスタンスのイメージOSに応じて、ワクチンインストールスクリプトを読み込みます。
 
-![vaccine_01_jp_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_jp_2021_06.png)
+![vaccine_console_01_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_jp.png)
 
 ### Linux系列のAgent
 
@@ -128,14 +128,14 @@ C:\Users\Administrator>
 ```
 ### 使用開始
 
-![vaccine_02_jp_2010628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_jp_20210628.png)
+![vaccine_console_deepsecurity_02_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_02_jp.png)
 
 更新をクリックすると、状況リストにインストールされたAgent情報が表示されます。
 **使用開始**ボタンをクリックすると、サービスの使用を開始します。
 
 ## Vaccine Agentの無効化手順
 
-![vaccine_03_jp_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_jp_210628.png)
+![vaccine_console_deepsecurity_03_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_03_jp.png)
 
 1\. Webコンソール使用中止
 
@@ -252,7 +252,7 @@ Auto Scaleを利用したワクチン機能の使用案内は、サポートへ�
 4\. 正常ファイル誤診申告および復元関連のお問い合わせ
 5\. ワクチンによるインスタンス誤作動の対処および原因分析関連のお問い合わせ
 
-### お問い合わせ方法
+### 問い合わせ方法
 
-1\. お問い合わせ方法：**サポート > 1：1お問い合わせ**
-2\. 対応時間：平日09：00～18：00
+1\. 問い合わせ方法：**カスタマーサポート > 問い合わせ**
+2\. 対応時間：平日 09:00～18:00
