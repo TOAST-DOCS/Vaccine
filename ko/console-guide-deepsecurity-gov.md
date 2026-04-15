@@ -12,7 +12,7 @@
 
 ## Vaccine Agent 활성화 절차
 
-제품명, Instance OS, Service Gateway IP 주소에 따라 백신 설치 스크립트를 불러옵니다.
+제품명, Instance OS, Network 환경, Service Gateway IP 주소에 따라 백신 설치 스크립트를 불러옵니다.
 
 ![vaccine_console_01_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_kr.png)
 
