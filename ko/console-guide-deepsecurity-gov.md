@@ -216,9 +216,13 @@ Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 �
 
 ※ 주의 사항
 
-* 스크립트 내용 중 "group:앱키"의 앱키는 서비스 화면의 **URL & Appkey** 메뉴 내 Appkey값으로 변경해야 합니다.
+* 스크립트 내용 중 "group:앱키"의 앱키는 서비스 화면의 **URL & Appkey** 메뉴 내 Appkey 값으로 변경해야 합니다.
 * 사용을 원치 않는 복제 인스턴스는 불필요한 리소스가 낭비되지 않도록 설치된 Agent 삭제를 권장합니다.
 * '사용시작' 후 서비스 사용 상태는 즉시 '상품종료' 상태가 활성화되지만, 백신 동작은 최초 설치와 마찬가지로 최대 약 10분 뒤부터 정상 동작합니다.
+
+<BR>
+
+* 공인망에서의 이미지 복제 시 아래 스크립트를 사용 합니다.
 
 1\. Linux 계열 Agent 스크립트
 
@@ -228,7 +232,7 @@ touch /etc/use_dsa_with_iptables
 IP=`ifconfig eth0 | grep -w -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1`
 uuidInfo=`curl -s 169.254.169.254/openstack/latest/meta_data.json | python -c 'import json,sys;obj=json.load(sys.stdin);print (str(obj["uuid"])+":"+str("user_metadata.server_group" in obj["meta"]))'`
 /opt/ds_agent/dsa_control -r
-/opt/ds_agent/dsa_control -a dsm://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+/opt/ds_agent/dsa_control -a dsm://114.110.178.77:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
 
 2\. Windows 계열 Agent 스크립트
@@ -242,12 +246,57 @@ $as="user_metadata.server_group" -in ((invoke-webrequest -uri 169.254.169.254/op
 $uuidInfo=$uuid+":"+$as`
 
 & $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -r
-& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://114.110.178.77:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
+
+<BR>
+
+* 사설망에서의 이미지 복제 시 아래 스크립트를 사용 합니다.
+
+1\. Linux 계열 Agent 스크립트
+
+```
+touch /etc/use_dsa_with_iptables
+
+IP=`ifconfig eth0 | grep -w -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1`
+uuidInfo=`curl -s 169.254.169.254/openstack/latest/meta_data.json | python -c 'import json,sys;obj=json.load(sys.stdin);print (str(obj["uuid"])+":"+str("user_metadata.server_group" in obj["meta"]))'`
+/opt/ds_agent/dsa_control -r
+/opt/ds_agent/dsa_control -a dsm://vaccine-private.gov-nhncloud.com:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+```
+
+2\. Windows 계열 Agent 스크립트
+
+```
+$idx=(Get-WmiObject -Class Win32_IP4RouteTable | where { $_.destination -eq '0.0.0.0' -and $_.mask -eq '0.0.0.0'} | Sort-Object metric1).interfaceindex[0]
+
+$IP=((Get-WmiObject win32_networkadapterconfiguration | where { $_.interfaceindex -eq $idx} | select ipaddress)| findstr .*[0-9].\.).Split(",")[0].Split("{")[-1].Split("}")[0]
+$uuid=((invoke-webrequest -uri 169.254.169.254/openstack/latest/meta_data.json -UseBasicParsing).content | convertfrom-json).uuid
+$as="user_metadata.server_group" -in ((invoke-webrequest -uri 169.254.169.254/openstack/latest/meta_data.json -UseBasicParsing).content | convertfrom-json).meta.psobject.properties.name
+$uuidInfo=$uuid+":"+$as`
+
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -r
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://vaccine-private.gov-nhncloud.com:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+```
+
 ※ 배치 파일(.bat)로 생성하여 스크립트를 실행해야 합니다.
 
 ### Auto Scale 사용 가이드
 Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의하시면 자세히 설명드리겠습니다.
+
+### 사설 백신 사용 가이드
+
+사설 백신을 사용하려면 vaccine-private.gov-nhncloud.com 도메인과 통신이 가능해야 합니다.
+도메인 통신이 불가한 환경인 경우 /etc/hosts 파일 변경이 필요합니다.
+
+* Linux
+    * vi 편집기 등으로 /etc/hosts 파일에 아래 내용을 추가합니다.
+       * 10.162.255.105 vaccine-private.gov-nhncloud.com
+
+* Windows
+    1. 메모장을 관리자 권한으로 실행합니다.
+    2. [파일 > 열기]를 클릭합니다.
+    3. C:\Windows\System32\drivers\etc 경로의 hosts 파일을 불러와 아래 내용을 추가합니다.
+       * 10.162.255.105 vaccine-private.gov-nhncloud.com
 
 
 ## 운영 문의
