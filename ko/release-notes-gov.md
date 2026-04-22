@@ -1,5 +1,13 @@
 ## Security > Vaccine > 릴리스 노트
 
+### 2026. 04. 28.
+
+#### 제품 추가
+* AhnLab CPP 제품 추가
+
+#### 기능 추가
+* AhnLab CPP 제품 Service Gateway 연동 지원
+
 ### 2025. 12. 05.
 
 #### 기능 개선
