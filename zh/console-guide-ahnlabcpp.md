@@ -21,9 +21,9 @@ Please refer to the following guide to learn how to integrate Vaccine Service Ga
 
 ## Vaccine Agent Activation Process
 
-Load the vaccine installation script based on the product name, Instance OS, and Service Gateway IP address.
+Load the vaccine installation script based on the product name, Instance OS, Network Environment and Service Gateway IP address.
 
-![vaccine_console_01_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_kr.png)
+![vaccine_console_01_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_en.png)
 
 ### Linux-based Agent
 
