@@ -12,7 +12,7 @@
 
 ## Vaccine Agentの有効化手順
 
-インスタンスのイメージOSに応じて、ワクチンインストールスクリプトを読み込みます。
+製品名、Instance OS, ネットワーク環境、Service Gateway IPアドレスに応じて、ワクチンインストールスクリプトを呼び出します。
 
 ![vaccine_console_01_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_jp.png)
 
