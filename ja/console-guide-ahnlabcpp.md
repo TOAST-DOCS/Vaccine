@@ -21,9 +21,9 @@ Vaccineサービスゲートウェイを連携する方法は次のとおりで�
 
 ## Vaccine Agent有効化手順
 
-製品名、Instance OS、Service Gateway IPアドレスに応じて、ワクチンインストールスクリプトを呼び出します。
+製品名、Instance OS, ネットワーク環境、Service Gateway IPアドレスに応じて、ワクチンインストールスクリプトを呼び出します。
 
-![vaccine_console_01_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_kr.png)
+![vaccine_console_01_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_jp.png)
 
 ### Linux系Agent
 

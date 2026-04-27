@@ -12,7 +12,7 @@ To communicated with the vaccine server, add the following content to the securi
 
 ## Enabling Vaccine Agents 
 
-Import vaccine installation script, for each OS of an instance image. 
+Load the vaccine installation script based on the product name, Instance OS, Network Environment and Service Gateway IP address.
 
 ![vaccine_console_01_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_en.png)
 
