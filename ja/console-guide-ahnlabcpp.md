@@ -1,8 +1,12 @@
-## Security > Vaccine > コンソール使用ガイド > AhnLab(AhnLab CPP)
+<!-- pre-align:aligned sig=f05aff1b6142 -->
+
+<a id="security-vaccine-console-user-guide-ahnlabahnlab-cpp"></a>
+## Security > Vaccine > コンソール使用ガイド > AhnLab(AhnLab CPP) { #security-vaccine-console-user-guide-ahnlabahnlab-cpp }
 
 ここではVaccine Agentの有効化および無効化手の順と、サービス使用方法を説明します。
 
-## セキュリティグループ(Security Groups) 設定
+<a id="set-up-security-groups"></a>
+## セキュリティグループ(Security Groups) 設定 { #set-up-security-groups }
 
 ワクチンサーバーと通信するには、セキュリティグループに以下の内容を追加します。
 
@@ -11,7 +15,8 @@
 | Egress | 5465, 5645, 8803, 8804, 8807, 8809, 8810 | 韓国(パンギョ)、韓国(ピョンチョン) | 114.110.145.157/32 or {SG IP} |
 
 
-## Vaccine サービスゲートウェイ連携
+<a id="integrate-vaccine-service-gateway"></a>
+## Vaccine サービスゲートウェイ連携 { #integrate-vaccine-service-gateway }
 サービスゲートウェイを利用すると、NHN Cloud内部でクライアントとVaccineサーバーが通信する際、外部のインターネットを経由せず、内部ネットワークで通信できます。
 Vaccineサービスゲートウェイを連携する方法は次のとおりです。
 
@@ -19,13 +24,15 @@ Vaccineサービスゲートウェイを連携する方法は次のとおりで�
 2. 作成するサービスゲートウェイの名前、VPC、サブネットを入力し、サービスとして**Vaccine**を選択した後、**確認**をクリックすると、Vaccineサービスゲートウェイが作成されます。
 
 
-## Vaccine Agent有効化手順
+<a id="vaccine-agent-activation-process"></a>
+## Vaccine Agent有効化手順 { #vaccine-agent-activation-process }
 
 製品名、Instance OS, ネットワーク環境、Service Gateway IPアドレスに応じて、ワクチンインストールスクリプトを呼び出します。
 
 ![vaccine_console_01_jp.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_jp.png)
 
-### Linux系Agent
+<a id="linux-based-agent"></a>
+### Linux系Agent { #linux-based-agent }
 
 1\. インストールスクリプトをコピーするには、**クリップボードにコピー**をクリックします。
 
@@ -91,7 +98,8 @@ Succeed to start ahnagent
 [rocky@vaccine-test ～]$
 ```
 
-### Windows系Agent
+<a id="windows-based-agent"></a>
+### Windows系Agent { #windows-based-agent }
 
 1\. コンソールのスクリプトをコピーします。
 
@@ -110,20 +118,24 @@ File Install Complete!!
 
 C:\Users\administrator>
 ```
-### 使用開始
+<a id="getting-started"></a>
+### 使用開始 { #getting-started }
 
 更新をクリックすると、状況一覧にインストールされたAgent情報が表示されます。
 Agentのインストール後、自動的に有効化されます。
 
-## Vaccine Agent無効化手順
+<a id="vaccine-agent-deactivation-process"></a>
+## Vaccine Agent無効化手順 { #vaccine-agent-deactivation-process }
 
 ![vaccine_console_ahnlabcpp_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_ahnlabcpp_02_kr.png)
 
 **使用終了**をクリックして、ワクチンの使用を中止します。
 
-## Vaccineサービス使用方法
+<a id="how-to-use-vaccine-service"></a>
+## Vaccineサービス使用方法 { #how-to-use-vaccine-service }
 
-### マルウェア分析ガイド
+<a id="malware-analysis-guide"></a>
+### マルウェア分析ガイド { #malware-analysis-guide }
 * CPPはファイル復元ガイドを提供していません。マルウェアの分析が必要な場合、分析ファイルを収集した後、カスタマーサポートに分析を要請します。
     * Linux
         * マルウェア診断ログファイルの抽出
@@ -147,7 +159,8 @@ Agentのインストール後、自動的に有効化されます。
             * ログ収集ファイルの保存パス及びファイル名を入力して保存
             * ログ収集完了後、保存パス内のファイル(arc圧縮ファイル)を送付
 
-### エージェント状態チェックガイド
+<a id="agent-health-check-guide"></a>
+### エージェント状態チェックガイド { #agent-health-check-guide }
 * Linux
     * systemctl status cppagent と入力
 ```
@@ -177,7 +190,8 @@ SERVICE_NAME: CPPAgentSvc
         WAIT_HINT          : 0x0
 ```
 
-### 分析ガイド
+<a id="analysis-guide"></a>
+### 分析ガイド { #analysis-guide }
 * エージェントがオフラインまたは無効状態の場合、次のファイルを収集し、カスタマーサポートに分析を要請します。
     * Linux
         * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v コマンドを実行
@@ -189,7 +203,8 @@ SERVICE_NAME: CPPAgentSvc
         * ログ収集ファイルの保存パス及びファイル名を入力して保存
         * ログ収集完了後、保存パス内のファイル(arc圧縮ファイル)を送付
 
-### 削除ガイド
+<a id="uninstall-guide"></a>
+### 削除ガイド { #uninstall-guide }
 * Linux
     * インスタンスに接続し、CPP Agentを削除します。
     * /usr/local/bin/uninstall-cppagent を実行
@@ -197,9 +212,11 @@ SERVICE_NAME: CPPAgentSvc
     * インスタンスに接続し、CPP Agentを削除します。
     * **コントロールパネル > プログラムと機能**で**AhnLab Security Agent(CPP)**を選択して削除
  
-## 運営の問い合わせ
+<a id="operation-inquiry"></a>
+## 運営の問い合わせ { #operation-inquiry }
 
-### 問い合わせ対象
+<a id="inquiry-item"></a>
+### 問い合わせ対象 { #inquiry-item }
 
 1\. 特定のファイル及びフォルダの例外処理
 2\. Agentのインストール失敗に関する問い合わせ
@@ -207,7 +224,8 @@ SERVICE_NAME: CPPAgentSvc
 4\. 正常なファイルの誤検知の申告及び復元に関する問い合わせ
 5\. ワクチンによるインスタンスの誤動作の措置及び原因分析に関する問い合わせ
 
-### 問い合わせ方法
+<a id="how-to-inquire"></a>
+### 問い合わせ方法 { #how-to-inquire }
 
 1\. 問い合わせ方法：**カスタマーサポート > 問い合わせ**
 2\. 対応時間：平日 09:00～18:00

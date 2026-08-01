@@ -1,8 +1,12 @@
-## Security > Vaccine > コンソール使用ガイド
+<!-- pre-align:aligned sig=b8bad82ac65c -->
+
+<a id="security-vaccine-console-guide"></a>
+## Security > Vaccine > コンソール使用ガイド { #security-vaccine-console-guide }
 
 ここではVaccine Agentの有効化および無効化手の順と、サービス使用方法を説明します。
 
-## セキュリティグループ(Security Group)設定
+<a id="set-security-groups"></a>
+## セキュリティグループ(Security Group)設定 { #set-security-groups }
 
 ワクチンサーバーと通信するには、セキュリティグループに以下の内容を追加します。
 
@@ -10,13 +14,15 @@
 | --- | --- | --- | ---- |
 | Egress | 4119, 4120, 4122 | 韓国(パンギョ)、韓国(ピョンチョン) | 114.110.144.39/32 |
 
-## Vaccine Agentの有効化手順
+<a id="enabling-vaccine-agents"></a>
+## Vaccine Agentの有効化手順 { #enabling-vaccine-agents }
 
 インスタンスのイメージOSに応じて、ワクチンインストールスクリプトを読み込みます。
 
 ![vaccine_01_jp_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_jp_2021_06.png)
 
-### Linux系列のAgent
+<a id="for-linux"></a>
+### Linux系列のAgent { #for-linux }
 
 1\. インストールスクリプトをコピーするには、**クリップボードにコピー**をクリックします。
 
@@ -65,7 +71,8 @@ Command session completed.
 [root@vaccine-test ~]#
 ```
 
-### Windows系列のAgent
+<a id="for-windows"></a>
+### Windows系列のAgent { #for-windows }
 
 1\. コンソールスクリプトをコピーします。
 
@@ -126,32 +133,38 @@ Command session completed.
 
 C:\Users\Administrator>
 ```
-### 使用開始
+<a id="start-service"></a>
+### 使用開始 { #start-service }
 
 ![vaccine_02_jp_2010628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_jp_20210628.png)
 
 更新をクリックすると、状況リストにインストールされたAgent情報が表示されます。
 **使用開始**ボタンをクリックすると、サービスの使用を開始します。
 
-## Vaccine Agentの無効化手順
+<a id="disabling-vaccine-agents"></a>
+## Vaccine Agentの無効化手順 { #disabling-vaccine-agents }
 
 ![vaccine_03_jp_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_jp_210628.png)
 
 1\. Webコンソール使用中止
 
 * **使用終了**ボタンをクリックして、ワクチンの使用を中止します。
-### Linux系列のAgent
+<a id="disabling-vaccine-agents-for-linux"></a>
+### Linux系列のAgent { #disabling-vaccine-agents-for-linux }
 * インスタンスに接続し、Vaccine Agentを削除します。
     * CentOS：rpm -e ds_agentの実行
     * Debian/Ubuntu： apt-get remove ds-agent実行
 
-### Windows系列のAgent
+<a id="disabling-vaccine-agents-for-windows"></a>
+### Windows系列のAgent { #disabling-vaccine-agents-for-windows }
 * インスタンスに接続し、Vaccine Agentを削除します。
     *プログラムおよび機能メニューで**Trend Micro Deep Security Agent**を削除します。
 
-## Vaccineサービスの使用方法
+<a id="applying-vaccine-service"></a>
+## Vaccineサービスの使用方法 { #applying-vaccine-service }
 
-### ファイル復元ガイド
+<a id="guide-for-file-restoration"></a>
+### ファイル復元ガイド { #guide-for-file-restoration }
 1\. ファイル復元
 
 * 復元ツールを[ダウンロード](http://static.toastoven.net/prod_vaccine/QFAdminUtil_win32.zip)します。
@@ -165,7 +178,8 @@ C:\Users\Administrator>
     *隔離ファイルが見えない場合は、**コンピュータ**または**ファイルエクスプローラ**のメニューで**フォルダーオプション**をクリックして<br>
     **表示**タブで**保護されたオペレーションシステムファイルを表示しない**の選択を解除して**隠しファイル、隠しフォルダー、および隠しドライブを表示する**を選択します。
 
-### エージェント状態チェックガイド
+<a id="guide-for-agent-status-check"></a>
+### エージェント状態チェックガイド { #guide-for-agent-status-check }
 * Linux
     * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
 
@@ -180,7 +194,8 @@ AgentStatus.agentState: green
     * WindowsトレイでAgentを右クリックしてコンソールを開く > 「実行中(Running)」確認  
     * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
 
-### 分析ガイド
+<a id="analysis-guide"></a>
+### 分析ガイド { #analysis-guide }
 * ***エージェントがオフラインまたは非アクティブ状態の場合、次のファイルを収集してサポートに分析をリクエストします。**
     * Linux
         * /opt/ds_agent/dsa_control -d実行
@@ -191,7 +206,8 @@ AgentStatus.agentState: green
         * C:\Program Data\Trend Micro\Deep Security Agent\diag\ランダム10桁数字.zipファイル分析リクエスト
     * 詳細な分析のために、問題発生状況でデバッグ実行後に作成されたファイルを追加で要請できます。
 
-### 削除ガイド
+<a id="delete-guide"></a>
+### 削除ガイド { #delete-guide }
 * Linux系列Agent
     * インスタンスに接続してVaccine Agentを削除します。
        * CentOS: rpm -e ds_agent実行
@@ -200,7 +216,8 @@ AgentStatus.agentState: green
     * インスタンスに接続してVaccine Agentを削除します。
        * プログラム及び機能メニューで**Trend Micro Deep Security Agent**を削除します。
 
-### イメージ複製時の使用ガイド
+<a id="user-guide-for-image-replication"></a>
+### イメージ複製時の使用ガイド { #user-guide-for-image-replication }
 
 Vaccine Agentが含まれているPrivate Image基盤インスタンス作成時のワクチン使用ガイドです。
 
@@ -239,12 +256,15 @@ $uuidInfo=$uuid+":"+$as`
 ```
 ※パッチファイル(.bat)で作成し、スクリプトを実行する必要があります。
 
-### Auto Scale使用ガイド
+<a id="user-guide-for-auto-scale"></a>
+### Auto Scale使用ガイド { #user-guide-for-auto-scale }
 Auto Scaleを利用したワクチン機能の使用案内は、サポートへお問い合わせください。詳細を説明いたします。
 
-## 運営お問い合わせ
+<a id="operational-inquiries"></a>
+## 運営お問い合わせ { #operational-inquiries }
 
-### お問い合わせ対象
+<a id="inquiries"></a>
+### お問い合わせ対象 { #inquiries }
 
 1\. 特定ファイルおよびフォルダ例外処理
 2\. Agentインストール失敗のお問い合わせ
@@ -252,7 +272,8 @@ Auto Scaleを利用したワクチン機能の使用案内は、サポートへ�
 4\. 正常ファイル誤診申告および復元関連のお問い合わせ
 5\. ワクチンによるインスタンス誤作動の対処および原因分析関連のお問い合わせ
 
-### お問い合わせ方法
+<a id="to-inquire"></a>
+### お問い合わせ方法 { #to-inquire }
 
 1\. お問い合わせ方法：**サポート > 1：1お問い合わせ**
 2\. 対応時間：平日09：00～18：00
