@@ -1,28 +1,29 @@
-<!-- pre-align:aligned sig=7d3db0b31e4f -->
-
-<a id="security-vaccine-console-user-guide-trend-microdeep-security"></a>
-## Security > Vaccine > 콘솔 사용 가이드 > Trend Micro(Deep Security) { #security-vaccine-console-user-guide-trend-microdeep-security }
+## Security > Vaccine > 콘솔 사용 가이드 > Trend Micro(Deep Security)
 
 여기에서는 Vaccine Agent 활성화 및 비활성화 절차와 서비스 사용법을 설명합니다.
 
-<a id="set-security-groups"></a>
-## 보안 그룹(Security Groups) 설정 { #set-security-groups }
+## 보안 그룹(Security Groups) 설정
 
 백신 서버와 통신하려면 보안 그룹에 아래 내용을 추가합니다.
 
 | 방향 | 포트 | 리전 | CIDR |
 | --- | --- | --- | ---- |
-| Egress | 4119, 4120, 4122 | 한국(판교), 한국(평촌) | 114.110.144.39/32 |
+| Egress | 4119, 4120, 4122 | 한국(판교), 한국(평촌) | 114.110.178.77/32 |
 
-<a id="enabling-vaccine-agents"></a>
-## Vaccine Agent 활성화 절차 { #enabling-vaccine-agents }
+사설 망에서의 백신 서버와 통신하려면 보안 그룹에 아래 내용을 추가합니다. (공공 Private - 하이브리드망 / 2차 방화벽 사용 필수)
+사설 망에서의 통신은 Red Zone 방화벽, 라우팅 추가가 필요합니다. 설정에 대한 자세한 내용은 NHN Cloud 고객 센터 1:1 문의로 문의하십시오.
+
+| 방향 | 포트 | 리전 | CIDR |
+| --- | --- | --- | ---- |
+| Egress | 4119, 4120, 4122 | 한국(판교), 한국(평촌) | 10.162.255.105/32 |
+
+## Vaccine Agent 활성화 절차
 
 제품명, Instance OS, Network 환경, Service Gateway IP 주소에 따라 백신 설치 스크립트를 불러옵니다.
 
 ![vaccine_console_01_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_kr.png)
 
-<a id="for-linux"></a>
-### Linux 계열 Agent { #for-linux }
+### Linux 계열 Agent
 
 1\. 설치 스크립트를 복사하려면 **클립보드로 복사**를 클릭합니다.
 
@@ -71,8 +72,7 @@ Command session completed.
 [root@vaccine-test ~]#
 ```
 
-<a id="for-windows"></a>
-### Windows 계열 Agent { #for-windows }
+### Windows 계열 Agent
 
 1\. 콘솔 스크립트를 복사합니다.
 
@@ -133,38 +133,32 @@ Command session completed.
 
 C:\Users\Administrator>
 ```
-<a id="start-service"></a>
-### 사용 시작 { #start-service }
+### 사용 시작
 
 ![vaccine_console_deepsecurity_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_02_kr.png)
 
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
 **사용 시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
 
-<a id="disabling-vaccine-agents"></a>
-## Vaccine Agent 비활성화 절차 { #disabling-vaccine-agents }
+## Vaccine Agent 비활성화 절차
 
 ![vaccine_console_deepsecurity_03_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_deepsecurity_03_kr.png)
 
 1\. 웹 콘솔 사용 중지
 
 * **사용 종료**를 클릭하여 백신 사용을 중지합니다.
-<a id="disabling-vaccine-agents-for-linux"></a>
-### Linux 계열 Agent { #disabling-vaccine-agents-for-linux }
+### Linux 계열 Agent
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
     * CentOS: rpm -e ds_agent 실행
     * Debian/Ubuntu: apt-get remove ds-agent 실행
 
-<a id="disabling-vaccine-agents-for-windows"></a>
-### Windows 계열 Agent { #disabling-vaccine-agents-for-windows }
+### Windows 계열 Agent
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
     * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
 
-<a id="applying-vaccine-service"></a>
-## Vaccine 서비스 사용법 { #applying-vaccine-service }
+## Vaccine 서비스 사용법
 
-<a id="guide-for-file-restoration"></a>
-### 파일 복원 가이드 { #guide-for-file-restoration }
+### 파일 복원 가이드
 1\. 파일 복원
 
 * 복원 툴을 [다운로드](http://static.toastoven.net/prod_vaccine/QFAdminUtil_win32.zip)합니다.
@@ -178,8 +172,7 @@ C:\Users\Administrator>
     * 격리 파일이 보이지 않으면, **컴퓨터** 또는 **파일 탐색기** 메뉴에서 **폴더 및 검색 옵션**을 클릭한 후<br>
       **보기** 탭에서 **보호된 운영체제 파일 숨기기**를 선택 해제하고 **숨김 파일, 폴더 및 드라이브 표시**를 선택합니다.
 
-<a id="guide-for-agent-status-check"></a>
-### 에이전트 상태 체크 가이드 { #guide-for-agent-status-check }
+### 에이전트 상태 체크 가이드
 * Linux
     * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
      
@@ -194,8 +187,7 @@ AgentStatus.agentState: green
     * 윈도우 트레이에서 Agent 우클릭 후 콘솔 열기 선택 > "실행중(Running)" 확인   
     * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
    
-<a id="analysis-guide"></a>
-### 분석 가이드 { #analysis-guide }
+### 분석 가이드
 * **에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객지원으로 분석을 요청합니다.**
     * Linux
         * /opt/ds_agent/dsa_control -d 실행
@@ -206,8 +198,7 @@ AgentStatus.agentState: green
         * C:\Program Data\Trend Micro\Deep Security Agent\diag\랜덤10자리숫자.zip 파일 분석 요청
     * 자세한 분석을 위해 문제 발생 상황에서 디버깅 수행 후 생성된 파일을 추가로 요청할 수 있습니다.
 
-<a id="delete-guide"></a>
-### 삭제 가이드 { #delete-guide }
+### 삭제 가이드
 * Linux 계열 Agent
     * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
        * CentOS: rpm -e ds_agent 실행
@@ -216,8 +207,7 @@ AgentStatus.agentState: green
     * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
        * **프로그램 및 기능**에서 **Trend Micro Deep Security Agent** 선택하여 제거
 
-<a id="user-guide-for-image-replication"></a>
-### 이미지 복제 시 사용 가이드 { #user-guide-for-image-replication }
+### 이미지 복제 시 사용 가이드
 
 Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 사용 가이드입니다.
 
@@ -226,9 +216,13 @@ Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 �
 
 ※ 주의 사항
 
-* 스크립트 내용 중 "group:앱키"의 앱키는 서비스 화면의 **URL & Appkey** 메뉴 내 Appkey값으로 변경해야 합니다.
+* 스크립트 내용 중 "group:앱키"의 앱키는 서비스 화면의 **URL & Appkey** 메뉴 내 Appkey 값으로 변경해야 합니다.
 * 사용을 원치 않는 복제 인스턴스는 불필요한 리소스가 낭비되지 않도록 설치된 Agent 삭제를 권장합니다.
 * '사용시작' 후 서비스 사용 상태는 즉시 '상품종료' 상태가 활성화되지만, 백신 동작은 최초 설치와 마찬가지로 최대 약 10분 뒤부터 정상 동작합니다.
+
+<BR>
+
+* 공인망에서의 이미지 복제 시 아래 스크립트를 사용 합니다.
 
 1\. Linux 계열 Agent 스크립트
 
@@ -238,7 +232,7 @@ touch /etc/use_dsa_with_iptables
 IP=`ifconfig eth0 | grep -w -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1`
 uuidInfo=`curl -s 169.254.169.254/openstack/latest/meta_data.json | python -c 'import json,sys;obj=json.load(sys.stdin);print (str(obj["uuid"])+":"+str("user_metadata.server_group" in obj["meta"]))'`
 /opt/ds_agent/dsa_control -r
-/opt/ds_agent/dsa_control -a dsm://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+/opt/ds_agent/dsa_control -a dsm://114.110.178.77:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
 
 2\. Windows 계열 Agent 스크립트
@@ -252,20 +246,62 @@ $as="user_metadata.server_group" -in ((invoke-webrequest -uri 169.254.169.254/op
 $uuidInfo=$uuid+":"+$as`
 
 & $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -r
-& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://114.110.144.39:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://114.110.178.77:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
 ```
+
+<BR>
+
+* 사설망에서의 이미지 복제 시 아래 스크립트를 사용 합니다.
+
+1\. Linux 계열 Agent 스크립트
+
+```
+touch /etc/use_dsa_with_iptables
+
+IP=`ifconfig eth0 | grep -w -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1`
+uuidInfo=`curl -s 169.254.169.254/openstack/latest/meta_data.json | python -c 'import json,sys;obj=json.load(sys.stdin);print (str(obj["uuid"])+":"+str("user_metadata.server_group" in obj["meta"]))'`
+/opt/ds_agent/dsa_control -r
+/opt/ds_agent/dsa_control -a dsm://vaccine-private.gov-nhncloud.com:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+```
+
+2\. Windows 계열 Agent 스크립트
+
+```
+$idx=(Get-WmiObject -Class Win32_IP4RouteTable | where { $_.destination -eq '0.0.0.0' -and $_.mask -eq '0.0.0.0'} | Sort-Object metric1).interfaceindex[0]
+
+$IP=((Get-WmiObject win32_networkadapterconfiguration | where { $_.interfaceindex -eq $idx} | select ipaddress)| findstr .*[0-9].\.).Split(",")[0].Split("{")[-1].Split("}")[0]
+$uuid=((invoke-webrequest -uri 169.254.169.254/openstack/latest/meta_data.json -UseBasicParsing).content | convertfrom-json).uuid
+$as="user_metadata.server_group" -in ((invoke-webrequest -uri 169.254.169.254/openstack/latest/meta_data.json -UseBasicParsing).content | convertfrom-json).meta.psobject.properties.name
+$uuidInfo=$uuid+":"+$as`
+
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -r
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://vaccine-private.gov-nhncloud.com:4120/ "group:앱키" "displayname:$IP" "description:$uuidInfo"
+```
+
 ※ 배치 파일(.bat)로 생성하여 스크립트를 실행해야 합니다.
 
-<a id="user-guide-for-auto-scale"></a>
-### Auto Scale 사용 가이드 { #user-guide-for-auto-scale }
+### Auto Scale 사용 가이드
 Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의하시면 자세히 설명드리겠습니다.
 
+### 사설 백신 사용 가이드
 
-<a id="operational-inquiries"></a>
-## 운영 문의 { #operational-inquiries }
+사설 백신을 사용하려면 vaccine-private.gov-nhncloud.com 도메인과 통신이 가능해야 합니다.
+도메인 통신이 불가한 환경인 경우 /etc/hosts 파일 변경이 필요합니다.
 
-<a id="inquiries"></a>
-### 문의 대상 { #inquiries }
+* Linux
+    * vi 편집기 등으로 /etc/hosts 파일에 아래 내용을 추가합니다.
+       * 10.162.255.105 vaccine-private.gov-nhncloud.com
+
+* Windows
+    1. 메모장을 관리자 권한으로 실행합니다.
+    2. [파일 > 열기]를 클릭합니다.
+    3. C:\Windows\System32\drivers\etc 경로의 hosts 파일을 불러와 아래 내용을 추가합니다.
+       * 10.162.255.105 vaccine-private.gov-nhncloud.com
+
+
+## 운영 문의
+
+### 문의 대상
 
 1\. 특정 파일 및 폴더 예외 처리
 2\. Agent 설치 실패 문의
@@ -273,8 +309,7 @@ Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의�
 4\. 정상 파일 오진 신고 및 복원 관련 문의
 5\. 백신으로 인한 인스턴스 오동작 조치 및 원인 분석 관련 문의
 
-<a id="how-to-inquire"></a>
-### 문의 방법 { #how-to-inquire }
+### 문의 방법
 
-1\. 문의 방법: **고객지원 > 문의하기**
+1\. 문의 방법: **고객 센터 > 1:1 문의**
 2\. 대응 시간: 평일 09:00~18:00

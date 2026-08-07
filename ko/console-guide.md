@@ -1,8 +1,12 @@
-## Security > Vaccine > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=b8bad82ac65c -->
+
+<a id="security-vaccine-console-guide"></a>
+## Security > Vaccine > 콘솔 사용 가이드 { #security-vaccine-console-guide }
 
 여기에서는 Vaccine Agent 활성화 및 비활성화 절차와 서비스 사용법을 설명합니다.
 
-## 보안 그룹(Security Group) 설정
+<a id="set-security-groups"></a>
+## 보안 그룹(Security Group) 설정 { #set-security-groups }
 
 백신 서버와 통신하려면 보안 그룹에 아래 내용을 추가합니다.
 
@@ -10,13 +14,15 @@
 | --- | --- | --- | ---- |
 | Egress | 4119, 4120, 4122 | 한국(판교), 한국(평촌) | 114.110.144.39/32 |
 
-## Vaccine Agent 활성화 절차
+<a id="enabling-vaccine-agents"></a>
+## Vaccine Agent 활성화 절차 { #enabling-vaccine-agents }
 
 인스턴스의 이미지 OS에 따라 백신 설치 스크립트를 불러옵니다.
 
 ![vaccine_01_ko_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_ko_2021_06.png)
 
-### Linux 계열 Agent
+<a id="for-linux"></a>
+### Linux 계열 Agent { #for-linux }
 
 1\. 설치 스크립트를 복사하려면 **클립보드 복사**를 클릭합니다.
 
@@ -65,7 +71,8 @@ Command session completed.
 [root@vaccine-test ~]#
 ```
 
-### Windows 계열 Agent
+<a id="for-windows"></a>
+### Windows 계열 Agent { #for-windows }
 
 1\. 콘솔 스크립트를 복사합니다.
 
@@ -126,32 +133,38 @@ Command session completed.
 
 C:\Users\Administrator>
 ```
-### 사용 시작
+<a id="start-service"></a>
+### 사용 시작 { #start-service }
 
 ![vaccine_02_ko_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_ko_20210628.png)
 
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
 **사용시작** 버튼을 클릭하면 서비스 사용이 시작됩니다.
 
-## Vaccine Agent 비활성화 절차
+<a id="disabling-vaccine-agents"></a>
+## Vaccine Agent 비활성화 절차 { #disabling-vaccine-agents }
 
 ![vaccine_03_ko_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_ko_210628.png)
 
 1\. 웹 콘솔 사용 중지
 
 * **사용종료** 버튼을 클릭하여 백신 사용을 중지합니다.
-### Linux 계열 Agent
+<a id="disabling-vaccine-agents-for-linux"></a>
+### Linux 계열 Agent { #disabling-vaccine-agents-for-linux }
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
     * CentOS: rpm -e ds_agent 실행
     * Debian/Ubuntu: apt-get remove ds-agent 실행
 
-### Windows 계열 Agent
+<a id="disabling-vaccine-agents-for-windows"></a>
+### Windows 계열 Agent { #disabling-vaccine-agents-for-windows }
 * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
     * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
 
-## Vaccine 서비스 사용법
+<a id="applying-vaccine-service"></a>
+## Vaccine 서비스 사용법 { #applying-vaccine-service }
 
-### 파일 복원 가이드
+<a id="guide-for-file-restoration"></a>
+### 파일 복원 가이드 { #guide-for-file-restoration }
 1\. 파일 복원
 
 * 복원 툴을 [다운로드](http://static.toastoven.net/prod_vaccine/QFAdminUtil_win32.zip)합니다.
@@ -165,7 +178,8 @@ C:\Users\Administrator>
     * 격리 파일이 보이지 않으면, **컴퓨터** 또는 **파일 탐색기** 메뉴에서 **폴더 및 검색 옵션**을 클릭한 후<br>
       **보기** 탭에서 **보호된 운영체제 파일 숨기기**를 선택 해제하고 **숨김 파일, 폴더 및 드라이브 표시**를 선택합니다.
 
-### 에이전트 상태 체크 가이드
+<a id="guide-for-agent-status-check"></a>
+### 에이전트 상태 체크 가이드 { #guide-for-agent-status-check }
 * Linux
     * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
      
@@ -180,7 +194,8 @@ AgentStatus.agentState: green
     * 윈도우 트레이에서 Agent 우클릭 후 콘솔 열기 선택 > "실행중(Running)" 확인   
     * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
    
-### 분석 가이드
+<a id="analysis-guide"></a>
+### 분석 가이드 { #analysis-guide }
 * **에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객 센터로 분석을 요청합니다.**
     * Linux
         * /opt/ds_agent/dsa_control -d 실행
@@ -191,7 +206,8 @@ AgentStatus.agentState: green
         * C:\Program Data\Trend Micro\Deep Security Agent\diag\랜덤10자리숫자.zip 파일 분석 요청
     * 자세한 분석을 위해 문제 발생 상황에서 디버깅 수행 후 생성된 파일을 추가로 요청할 수 있습니다.
 
-### 삭제 가이드
+<a id="delete-guide"></a>
+### 삭제 가이드 { #delete-guide }
 * Linux 계열 Agent
     * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
        * CentOS: rpm -e ds_agent 실행
@@ -200,7 +216,8 @@ AgentStatus.agentState: green
     * 인스턴스에 접속하여 Vaccine Agent를 삭제합니다.
        * 프로그램 및 기능 메뉴에서 **Trend Micro Deep Security Agent**를 삭제합니다.
 
-### 이미지 복제 시 사용 가이드
+<a id="user-guide-for-image-replication"></a>
+### 이미지 복제 시 사용 가이드 { #user-guide-for-image-replication }
 
 Vaccine Agent가 포함된 Private Image 기반 인스턴스 생성 시 백신 사용 가이드입니다.
 
@@ -239,13 +256,16 @@ $uuidInfo=$uuid+":"+$as`
 ```
 ※ 배치 파일(.bat)로 생성하여 스크립트를 실행해야 합니다.
 
-### Auto Scale 사용 가이드
+<a id="user-guide-for-auto-scale"></a>
+### Auto Scale 사용 가이드 { #user-guide-for-auto-scale }
 Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의하시면 자세히 설명드리겠습니다.
 
 
-## 운영 문의
+<a id="operational-inquiries"></a>
+## 운영 문의 { #operational-inquiries }
 
-### 문의 대상
+<a id="inquiries"></a>
+### 문의 대상 { #inquiries }
 
 1\. 특정 파일 및 폴더 예외 처리
 2\. Agent 설치 실패 문의
@@ -253,7 +273,8 @@ Auto Scale을 이용한 백신 기능 사용 안내는 고객 센터로 문의�
 4\. 정상 파일 오진 신고 및 복원 관련 문의
 5\. 백신으로 인한 인스턴스 오동작 조치 및 원인 분석 관련 문의
 
-### 문의 방법
+<a id="to-inquire"></a>
+### 문의 방법 { #to-inquire }
 
 1\. 문의 방법: **고객 센터 > 1:1 문의**
 2\. 대응 시간: 평일 09:00~18:00

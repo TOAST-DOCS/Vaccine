@@ -255,4 +255,3 @@ Regarding the use of vaccines by auto scale, contact Customer Center.
 
 1. How to Inquire: **Customer Support > Contact Us**
 2. Business Hours: Mon - Fri 9 AM - 6 PM
-

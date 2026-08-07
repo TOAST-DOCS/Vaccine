@@ -1,22 +1,17 @@
-<!-- pre-align:aligned sig=f05aff1b6142 -->
-
-<a id="security-vaccine-console-user-guide-ahnlabahnlab-cpp"></a>
-## Security > Vaccine > 콘솔 사용 가이드 > AhnLab(AhnLab CPP) { #security-vaccine-console-user-guide-ahnlabahnlab-cpp }
+## Security > Vaccine > 콘솔 사용 가이드 > AhnLab(AhnLab CPP)
 
 여기에서는 Vaccine Agent 활성화 및 비활성화 절차와 서비스 사용법을 설명합니다.
 
-<a id="set-up-security-groups"></a>
-## 보안 그룹(Security Groups) 설정 { #set-up-security-groups }
+## 보안 그룹(Security Groups) 설정
 
 백신 서버와 통신하려면 보안 그룹에 아래 내용을 추가합니다.
 
 | 방향 | 포트 | 리전 | CIDR |
 | --- | --- | --- | ---- |
-| Egress | 5465, 5645, 8803, 8804, 8807, 8809, 8810 | 한국(판교), 한국(평촌) | 114.110.144.193/32 or {SG IP}|
+| Egress | 5465, 5645, 8803, 8804, 8807, 8809, 8810 | - | 180.210.87.118 or {SG IP}|
 
 
-<a id="integrate-vaccine-service-gateway"></a>
-## Vaccine 서비스 게이트웨이 연동 { #integrate-vaccine-service-gateway }
+## Vaccine 서비스 게이트웨이 연동
 서비스 게이트웨이를 이용하면 NHN Cloud 내부에서 클라이언트와 Vaccine 서버가 통신할 때 외부 인터넷을 경유하지 않고, 내부 네트워크로 통신할 수 있습니다.
 Vaccine 서비스 게이트웨이를 연동하는 방법은 아래와 같습니다.
 
@@ -24,15 +19,13 @@ Vaccine 서비스 게이트웨이를 연동하는 방법은 아래와 같습니�
 2. 생성할 서비스 게이트웨이의 이름, VPC, 서브넷을 입력하고 서비스를 **Vaccine**으로 선택한 뒤 **확인**을 클릭하면 Vaccine 서비스 게이트웨이가 생성됩니다.
 
 
-<a id="vaccine-agent-activation-process"></a>
-## Vaccine Agent 활성화 절차 { #vaccine-agent-activation-process }
+## Vaccine Agent 활성화 절차
 
 제품명, Instance OS, Network 환경, Service Gateway IP 주소에 따라 백신 설치 스크립트를 불러옵니다.
 
 ![vaccine_console_01_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_kr.png)
 
-<a id="linux-based-agent"></a>
-### Linux 계열 Agent { #linux-based-agent }
+### Linux 계열 Agent
 
 1\. 설치 스크립트를 복사하려면 **클립보드로 복사**를 클릭합니다.
 
@@ -98,8 +91,7 @@ Succeed to start ahnagent
 [rocky@vaccine-test ~]$
 ```
 
-<a id="windows-based-agent"></a>
-### Windows 계열 Agent { #windows-based-agent }
+### Windows 계열 Agent
 
 1\. 콘솔 스크립트를 복사합니다.
 
@@ -118,24 +110,20 @@ File Install Complete!!
 
 C:\Users\administrator>
 ```
-<a id="getting-started"></a>
-### 사용 시작 { #getting-started }
+### 사용 시작
 
 새로고침을 클릭하면 현황 목록에 설치된 Agent 정보가 표시됩니다.
 Agent 설치 후 자동으로 활성화됩니다.
 
-<a id="vaccine-agent-deactivation-process"></a>
-## Vaccine Agent 비활성화 절차 { #vaccine-agent-deactivation-process }
+## Vaccine Agent 비활성화 절차
 
 ![vaccine_console_ahnlabcpp_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_ahnlabcpp_02_kr.png)
 
 **사용 종료**를 클릭하여 백신 사용을 중지합니다.
 
-<a id="how-to-use-vaccine-service"></a>
-## Vaccine 서비스 사용법 { #how-to-use-vaccine-service }
+## Vaccine 서비스 사용법
 
-<a id="malware-analysis-guide"></a>
-### 악성코드 분석 가이드 { #malware-analysis-guide }
+### 악성코드 분석 가이드
 * CPP는 파일 복원 가이드를 제공하지 않습니다. 악성코드 분석이 필요할 경우 분석 파일 수집 후 고객지원으로 분석을 요청합니다.
     * Linux
         * 악성코드 진단 로그 파일 추출
@@ -159,8 +147,7 @@ Agent 설치 후 자동으로 활성화됩니다.
             * 로그 수집 파일의 저장 경로 및 파일명 입력 후 저장
             * 로그 수집 완료 후 저장 경로 내 파일(arc 압축 파일) 전달
 
-<a id="agent-health-check-guide"></a>
-### 에이전트 상태 체크 가이드 { #agent-health-check-guide }
+### 에이전트 상태 체크 가이드
 * Linux
     * systemctl status cppagent 입력
 ```
@@ -190,8 +177,7 @@ SERVICE_NAME: CPPAgentSvc
         WAIT_HINT          : 0x0
 ```
 
-<a id="analysis-guide"></a>
-### 분석 가이드 { #analysis-guide }
+### 분석 가이드
 * 에이전트 오프라인 또는 비활성 상태 시 다음 파일을 수집하여 고객지원으로 분석을 요청합니다.
     * Linux
         * /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v 명령어 실행
@@ -203,8 +189,7 @@ SERVICE_NAME: CPPAgentSvc
         * 로그 수집 파일의 저장 경로 및 파일명 입력 후 저장
         * 로그 수집 완료 후 저장 경로 내 파일(arc 압축 파일) 전달
 
-<a id="uninstall-guide"></a>
-### 삭제 가이드 { #uninstall-guide }
+### 삭제 가이드
 * Linux
     * 인스턴스에 접속하여 CPP Agent를 삭제합니다.
     * /usr/local/bin/uninstall-cppagent 실행
@@ -212,11 +197,9 @@ SERVICE_NAME: CPPAgentSvc
     * 인스턴스에 접속하여 CPP Agent를 삭제합니다.
     * **제어판 > 프로그램 및 기능**에서 **AhnLab Security Agent(CPP)** 선택하여 제거
  
-<a id="operation-inquiry"></a>
-## 운영 문의 { #operation-inquiry }
+## 운영 문의
 
-<a id="inquiry-item"></a>
-### 문의 대상 { #inquiry-item }
+### 문의 대상
 
 1\. 특정 파일 및 폴더 예외 처리
 2\. Agent 설치 실패 문의
@@ -224,8 +207,7 @@ SERVICE_NAME: CPPAgentSvc
 4\. 정상 파일 오진 신고 및 복원 관련 문의
 5\. 백신으로 인한 인스턴스 오동작 조치 및 원인 분석 관련 문의
 
-<a id="how-to-inquire"></a>
-### 문의 방법 { #how-to-inquire }
+### 문의 방법
 
-1\. 문의 방법: **고객지원 > 문의하기**
+1\. 문의 방법: **고객 센터 > 1:1 문의**
 2\. 대응 시간: 평일 09:00~18:00
