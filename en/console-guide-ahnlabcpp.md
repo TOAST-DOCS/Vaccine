@@ -1,8 +1,12 @@
-## Security > Vaccine > Console User Guide > AhnLab(AhnLab CPP)
+<!-- pre-align:aligned sig=f05aff1b6142 -->
+
+<a id="security-vaccine-console-user-guide-ahnlabahnlab-cpp"></a>
+## Security > Vaccine > Console User Guide > AhnLab(AhnLab CPP) { #security-vaccine-console-user-guide-ahnlabahnlab-cpp }
 
 This document describes the procedure of enabling and disabling vaccine agents, and how to apply the service. 
 
-## Set up Security Groups
+<a id="set-up-security-groups"></a>
+## Set up Security Groups { #set-up-security-groups }
 
 To communicate with the vaccine server, add the following to the security group:
 
@@ -11,7 +15,8 @@ To communicate with the vaccine server, add the following to the security group:
 | Egress | 5465, 5645, 8803, 8804, 8807, 8809, 8810 | Korea (Pangyo), Korea (Pyeongchon) | 114.110.145.157/32 or {SG IP}|
 
 
-## Integrate Vaccine Service Gateway
+<a id="integrate-vaccine-service-gateway"></a>
+## Integrate Vaccine Service Gateway { #integrate-vaccine-service-gateway }
 Service gateways allow clients and Vaccine server to communicate with each other inside NHN Cloud, instead of going through the external internet.
 Please refer to the following guide to learn how to integrate Vaccine Service Gateway:
 
@@ -19,13 +24,15 @@ Please refer to the following guide to learn how to integrate Vaccine Service Ga
 2. Enter the name, VPC, and subnet of the service gateway you want to create, select the service as **Vaccine**, and click **OK** to create the Vaccine service gateway.
 
 
-## Vaccine Agent Activation Process
+<a id="vaccine-agent-activation-process"></a>
+## Vaccine Agent Activation Process { #vaccine-agent-activation-process }
 
 Load the vaccine installation script based on the product name, Instance OS, Network Environment and Service Gateway IP address.
 
 ![vaccine_console_01_en.png](https://static.toastoven.net/prod_vaccine/vaccine_console_01_en.png)
 
-### Linux-based Agent
+<a id="linux-based-agent"></a>
+### Linux-based Agent { #linux-based-agent }
 
 1. Click **Copy to Clipboard** to copy the installation script.
 
@@ -91,7 +98,8 @@ Succeed to start ahnagent
 [rocky@vaccine-test ~]$
 ```
 
-### Windows-based Agent
+<a id="windows-based-agent"></a>
+### Windows-based Agent { #windows-based-agent }
 
 1. Copy the console script.
 
@@ -110,20 +118,24 @@ File Install Complete!!
 
 C:\Users\administrator>
 ```
-### Getting Started
+<a id="getting-started"></a>
+### Getting Started { #getting-started }
 
 Click Refresh to see the installed Agent information in the status list.
 The Agent is automatically activated after installation.
 
-## Vaccine Agent Deactivation Process
+<a id="vaccine-agent-deactivation-process"></a>
+## Vaccine Agent Deactivation Process { #vaccine-agent-deactivation-process }
 
 ![vaccine_console_ahnlabcpp_02_kr.png](https://static.toastoven.net/prod_vaccine/vaccine_console_ahnlabcpp_02_kr.png)
 
 Click **Disable** to stop using the vaccine.
 
-## How to Use Vaccine Service
+<a id="how-to-use-vaccine-service"></a>
+## How to Use Vaccine Service { #how-to-use-vaccine-service }
 
-### Malware Analysis Guide
+<a id="malware-analysis-guide"></a>
+### Malware Analysis Guide { #malware-analysis-guide }
 * CPP does not provide a guide to restore files. If you need malware analysis, please contact Customer Support for analysis after collecting the analysis files.
     * Linux
         * Extract malware diagnostic log files
@@ -147,7 +159,8 @@ Click **Disable** to stop using the vaccine.
             * Enter a save path and filename for the log collection file and save it
             * After the log collection is complete, submit files in the save path (arc compressed files)
 
-### Agent Health Check Guide
+<a id="agent-health-check-guide"></a>
+### Agent Health Check Guide { #agent-health-check-guide }
 * Linux
     * Enter “systemctl status cppagent”
 ```
@@ -177,7 +190,8 @@ SERVICE_NAME: CPPAgentSvc
         WAIT_HINT          : 0x0
 ```
 
-### Analysis Guide
+<a id="analysis-guide"></a>
+### Analysis Guide { #analysis-guide }
 * When an agent is offline or inactive, the following files are collected and submitted to Customer Support for analysis:
     * Linux
         * Run the command /usr/local/ahnlab/cppagent/bin/ahnrpt -s ahnreport.arc -agreePrivacyPolicy v
@@ -189,7 +203,8 @@ SERVICE_NAME: CPPAgentSvc
         * Enter a save path and filename for the log collection file and save it
         * After the log collection is complete, submit files in the save path (arc compressed files)
 
-### Uninstall Guide
+<a id="uninstall-guide"></a>
+### Uninstall Guide { #uninstall-guide }
 * Linux
     * Access the instance and delete the CPP Agent.
     * Run /usr/local/bin/uninstall-cppagent
@@ -197,9 +212,11 @@ SERVICE_NAME: CPPAgentSvc
     * Access the instance and delete the CPP Agent.
     * From **Control Panel > Programs and Features**, select and uninstall **AhnLab Security Agent (CPP)** 
  
-## Operation Inquiry
+<a id="operation-inquiry"></a>
+## Operation Inquiry { #operation-inquiry }
 
-### Inquiry Item
+<a id="inquiry-item"></a>
+### Inquiry Item { #inquiry-item }
 
 1. Excluding specific file and folder exceptions
 2. Troubleshooting agent installation failures
@@ -207,7 +224,8 @@ SERVICE_NAME: CPPAgentSvc
 4. Reporting and restoring false positives
 5. Analyzing instance malfunctions caused by antivirus
 
-### How to Inquire
+<a id="how-to-inquire"></a>
+### How to Inquire { #how-to-inquire }
 
 1. How to Inquire: **Customer Support > Contact Us**
 2. Business Hours: Mon - Fri 9 AM - 6 PM

@@ -1,8 +1,12 @@
-## Security > Vaccine > Console Guide 
+<!-- pre-align:aligned sig=b8bad82ac65c -->
+
+<a id="security-vaccine-console-guide"></a>
+## Security > Vaccine > Console Guide { #security-vaccine-console-guide }
 
 This document describes the procedure of enabling and disabling vaccine agents, and how to apply the service. 
 
-## Set Security Groups
+<a id="set-security-groups"></a>
+## Set Security Groups { #set-security-groups }
 
 To communicated with the vaccine server, add the following content to the security groups.
 
@@ -10,13 +14,15 @@ To communicated with the vaccine server, add the following content to the securi
 | --- | --- | --- | ---- |
 | Egress | 4119, 4120, 4122 | Korea (Pangyo), Korea (Pyeongchon) | 114.110.144.39/32 |
 
-## Enabling Vaccine Agents 
+<a id="enabling-vaccine-agents"></a>
+## Enabling Vaccine Agents { #enabling-vaccine-agents }
 
 Import vaccine installation script, for each OS of an instance image. 
 
 ![vaccine_01_en_2021_06.png](https://static.toastoven.net/prod_vaccine/vaccine_01_en_2021_06.png)
 
-### For Linux 
+<a id="for-linux"></a>
+### For Linux { #for-linux }
 
 1\. To copy installation script, click  **Copy Clipboard**.
 
@@ -65,7 +71,8 @@ Command session completed.
 [root@vaccine-test ~]#
 ```
 
-### For Windows 
+<a id="for-windows"></a>
+### For Windows { #for-windows }
 
 1\. Copy console script. 
 
@@ -126,32 +133,38 @@ Recording is suspended. The output is C:\Users\Administrator\AppData\Roaming\Tre
 
 C:\Users\Administrator>
 ```
-### Start Service 
+<a id="start-service"></a>
+### Start Service { #start-service }
 
 ![vaccine_02_en_20210628.png](https://static.toastoven.net/prod_vaccine/vaccine_02_en_20210628.png)
 
 Click Refresh to find information of agents that are installed on the list of current status. 
 Click **Start Service** to start the service. 
 
-## Disabling Vaccine Agents 
+<a id="disabling-vaccine-agents"></a>
+## Disabling Vaccine Agents { #disabling-vaccine-agents }
 
 ![vaccine_03_en_210628.png](https://static.toastoven.net/prod_vaccine/vaccine_03_en_210628.png)
 
 1\. Suspend Web Console Service 
 
 * Click **Close Service** to stop vaccine service. 
-### For Linux 
+<a id="disabling-vaccine-agents-for-linux"></a>
+### For Linux { #disabling-vaccine-agents-for-linux }
 * Access instance and delete vaccine agent. 
     * CentOS: Execute rpm -e ds_agent 
     * Debian/Ubuntu: Execute apt-get remove ds-agent 
 
-### For Windows 
+<a id="disabling-vaccine-agents-for-windows"></a>
+### For Windows { #disabling-vaccine-agents-for-windows }
 * Access instance and delete vaccine agent. 
     * On Programs and Features, delete **Trend Micro Deep Security Agent**.
 
-## Applying Vaccine Service 
+<a id="applying-vaccine-service"></a>
+## Applying Vaccine Service { #applying-vaccine-service }
 
-### Guide for File Restoration 
+<a id="guide-for-file-restoration"></a>
+### Guide for File Restoration { #guide-for-file-restoration }
 1\. File Restoration 
 
 * [Download](http://static.toastoven.net/prod_vaccine/QFAdminUtil_win32.zip) a restoration tool. 
@@ -164,7 +177,8 @@ Click **Start Service** to start the service.
 * Windows : C:\ProgramData\Trend Micro\AMSP\quarantine
     * If you cannot find isolated files, click **Folder and Search Option** in **Computer** or **File Search**,  <br>deselect **Hide Protected Operating System Files** from the **View** tab, and select **Show Hidden Files, Folders and Drives**. 
       
-### Guide for Agent Status Check
+<a id="guide-for-agent-status-check"></a>
+### Guide for Agent Status Check { #guide-for-agent-status-check }
 * Linux
     * sudo /opt/ds_agent/dsa_query -c GetAgentStatus | grep AgentStatus.agentState
 
@@ -179,7 +193,8 @@ AgentStatus.agentState: green
     * Right-click Agent in the window tray and select Open Console > Confirm "(Running)" 
     * ![windows_agent_status.png](https://static.toastoven.net/prod_vaccine/windows_agent_status.png)
 
-### Analysis Guide
+<a id="analysis-guide"></a>
+### Analysis Guide { #analysis-guide }
 * **Collect the following files to request analysis from Customer Center when the agent is offline or inactive**
     * Linux
         * Execute /opt/ds_agent/dsa_control -d 
@@ -190,7 +205,8 @@ AgentStatus.agentState: green
         * Request for analysis of C:\Program Data\Trend Micro\Deep Security Agent\diag\random 10-digit numbers. zip file 
 * To analyze in more details, when an issue occurs, you may perform debugging first and request for more created files.
 
-### Delete Guide
+<a id="delete-guide"></a>
+### Delete Guide { #delete-guide }
 * For Linux
     * Access the instance to delete the Vaccine Agent.
        * CentOS: Execute rpm -e ds_agent
@@ -199,7 +215,8 @@ AgentStatus.agentState: green
     * Access the instance to delete the Vaccine Agent.
        * Delete **Trend Micro Deep Security Agent** from Programs and Features.
 
-### User Guide for Image Replication 
+<a id="user-guide-for-image-replication"></a>
+### User Guide for Image Replication { #user-guide-for-image-replication }
 
 This guide regards to using vaccines for the creation of private image-based instances, including vaccine agents. 
 
@@ -238,12 +255,15 @@ $uuidInfo=$uuid+":"+$as`
 ```
 ※ Script must be created in batch file (.bat) for execution. 
 
-### User Guide for Auto Scale 
+<a id="user-guide-for-auto-scale"></a>
+### User Guide for Auto Scale { #user-guide-for-auto-scale }
 Regarding the use of vaccines by auto scale, contact Customer Center.   
 
-## Operational Inquiries 
+<a id="operational-inquiries"></a>
+## Operational Inquiries { #operational-inquiries }
 
-### Inquiries 
+<a id="inquiries"></a>
+### Inquiries { #inquiries }
 
 1\. Handling exceptions for particular files and folders 
 2\. Failure in agent installation 
@@ -251,7 +271,8 @@ Regarding the use of vaccines by auto scale, contact Customer Center.
 4\. Wrong report of normal files and restorations 
 5\. Solutions to abnormal instance operations due to vaccine issues, and cause analysis 
 
-### To Inquire 
+<a id="to-inquire"></a>
+### To Inquire { #to-inquire }
 
 1\. To Inquire: Go to **Customer Center > 1:1 Inquiry**
 2\. Business Hours: 9 to 6, weekdays
