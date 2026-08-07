@@ -1,8 +1,12 @@
-## Security > Vaccine > Overview
+<!-- pre-align:aligned sig=0428bc2a1d3f -->
+
+<a id="security-vaccine-overview"></a>
+## Security > Vaccine > Overview { #security-vaccine-overview }
 
 With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users are protected on their servers against malicious codes. 
 
-## Main Features 
+<a id="main-features"></a>
+## Main Features { #main-features }
 
 * Provide free services for operating management servers, setting policy, and handling exceptional cases. 
 * Check status information of vaccine event detection on the service page. 
@@ -13,7 +17,8 @@ With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users 
 * Enable real-time inspection and manual scanning. 
 * Provide most up-to-date detection patterns. 
 
-## Operating Services (9 to 6, Weekdays)
+<a id="operating-services-9-to-6-weekdays"></a>
+## Operating Services (9 to 6, Weekdays) { #operating-services-9-to-6-weekdays }
 
 * Allow exception handling for particular files or folders. 
 * Provide supportive service when it fails to install agents.  
@@ -23,7 +28,8 @@ With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users 
 * Provide solution guides and technical support if an instance does not operate properly due to vaccine issues. 
     * For more details on solutions and technical guides, see Console User Guide.
 
-## Special Features 
+<a id="special-features"></a>
+## Special Features { #special-features }
 
 * Each product supports the following network environments.
     * AhnLab CPP projects are available in both internal and external network environments (a Service Gateway is required for the internal network environment).
@@ -33,6 +39,7 @@ With recognized solutions of AhnLab CPP and Deep Security by Trend Micro, users 
     * See Console User Guide on how to use replications, including vaccine agents. 
 * Regarding the use of vaccines by auto scale, contact Customer Center.  
 
-## Service Structure 
+<a id="service-structure"></a>
+## Service Structure { #service-structure }
 
 ![vaccine_img_en.png](https://static.toastoven.net/prod_vaccine/vaccine_img_en.png)
