@@ -1,73 +1,11 @@
 ## Security > Vaccine > 릴리스 노트
 
-### 2026. 04. 28.
+{% include-markdown './release-notes-gov/2026.md' %}
 
-#### 제품 추가
-* AhnLab CPP 제품 추가
+{% include-markdown './release-notes-gov/2025.md' %}
 
-#### 기능 추가
-* AhnLab CPP 제품 Service Gateway 연동 지원
+{% include-markdown './release-notes-gov/2024.md' %}
 
-### 2025. 12. 05.
+{% include-markdown './release-notes-gov/2022.md' %}
 
-#### 기능 개선
-* [Console] 설치 스크립트 VIP 변경
-
-### 2025. 11. 11.
-
-#### 기능 개선
-* [API] 공인백신 매니저 VIP 변경
-
-### 2025. 09. 09.
-
-#### 기능 개선
-* [API] 사설백신 매니저 증설
-
-### 2025. 02. 11.
-
-#### 기능 개선
-* [API] 백신 매니저 업그레이드
-* [Console] Ubuntu 24.04 이미지 지원
-
-### 2024. 09. 24.
-
-#### 기능 개선
-* [API] 백신 매니저 업그레이드
-
-### 2024. 04. 23.
-
-#### 기능 개선
-* 한국(평촌) 리전 오픈
-
-### 2022. 06. 30.
-
-#### 기능 추가
-* [Console] 사용 위치 선택 기능 추가(공인/사설)
-
-#### 기능 개선
-* [API] 백신 매니저 업그레이드
-* [Console] 서비스 안내 문구 삭제
-* [Console] 화면 UI 디자인 변경
-* [Console] Debian 11, Rocky Linux 이미지 지원
-
-
-### 2019. 11. 12.
-
-#### 기능 개선
-* [API] 백신 매니저 업그레이드
-* [Console] 서비스 안내 문구 삭제
-
-
-### 2019. 10. 01.
-
-#### 기능 개선
-
-* [API] 메일 발송 처리 변경
-* [Console] 서비스 안내 문구 추가
-
-
-### 2019. 06. 18.
-
-#### 신규 상품 출시
-
-* Vaccine 서비스는 기술력을 인정받은 TrendMicro DeepSecurity 제품을 통해 악성코드로부터 이용자의 서버를 보호합니다.
+{% include-markdown './release-notes-gov/2019.md' %}
