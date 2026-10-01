@@ -12,7 +12,7 @@
 
 <a id="march-10-2026-added-features"></a>
 #### 機能追加
-* AhnLab CPP 製品の Service Gateway 連동サポート
+* AhnLab CPP 製品の Service Gateway 連携サポート
 
 <a id="february-11-2025"></a>
 ### 2025. 02. 11. { #february-11-2025 }
